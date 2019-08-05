@@ -367,7 +367,7 @@ if(true){
         var url = ele.attr('id').trim();
             query.equalTo("words", url);
             query.count().then(function (number) {
-                $(document.getElementById(url)).text(number?  number : '0');
+                $(document.getElementById(url)).text(number?  parseInt(number/5) : '0');
             }, function (error) {
                  $(document.getElementById(url)).text('0');
             });
