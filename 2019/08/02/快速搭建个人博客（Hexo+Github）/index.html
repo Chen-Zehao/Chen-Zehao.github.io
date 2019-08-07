@@ -468,7 +468,7 @@ if(true){
         }
     }
 
-    //显示阅读量
+    //显示阅读量,这里我把访问了除以5
     function showPageViewsNum(ele,Counter){
         var query = new AV.Query("Counter");
         var url = ele.attr('id').trim();

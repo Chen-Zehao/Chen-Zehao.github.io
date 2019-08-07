@@ -299,6 +299,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android屏幕适配（smallestWidth限定符适配）
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/08/02/快速搭建个人博客（Hexo+Github）/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">快速搭建个人博客（Hexo+Github）</div>
@@ -403,7 +412,7 @@ if(true){
         }
     }
 
-    //显示阅读量
+    //显示阅读量,这里我把访问了除以5
     function showPageViewsNum(ele,Counter){
         var query = new AV.Query("Counter");
         var url = ele.attr('id').trim();
