@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Recyclerview作为子布局时获取的高度不会根据item数量调整" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">Recyclerview作为子布局时获取的高度不会根据item数量调整</a>
+    </h1>
+  
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="pageViews">0</span>次
+  </a>
+
+        
+        
+<a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
+  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>由于将Recyclerview的高度设置为wrap_content，因此测量高度的时候是使用AT_MOST模式（这个也就是父组件能够给出的最大的空间，当前组件的长或宽最大只能为这么大，当然也可以比这个小），在这个模式下，测量的高度为父布局和子布局二者中高度小的那个，当Recyclerview的子项高度之和比父view的高度小时，则Recyclerview的高度为子项高度之和，当Recyclerview的子项高度之和比父view的高度大时，则使用的是父view的高度，因此会出现Recyclerview子项显示不全的情况。</p>
+<p>而针对该情况，我们需要重写Recyclerview的onMeasure函数，使Recyclerview在测量时获取父布局的高度最大值变得更大</p>
+<p>一个int类型我们知道有32位。而view的测量模式有三种，要表示三种状态，至少得2位二进制位。于是系统采用了最高的2位表示模式。如图：</p>
+<p><img src="https://img-my.csdn.net/uploads/201208/31/1346374636_1935.png" alt="img"></p>
+<p>后面30位代表的是组件的大小，因此可以将其全都置为1，也就是值为Integer.MAX_VALUE &gt;&gt; 2（30个1），因此无论Recyclerview的子项高度和多大都不可能比这个大，所以Recyclerview测量得到的高度就为其子项之和的高度</p>
+<p>重写的方法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)&#123;</span><br><span class="line">        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2,MeasureSpec.AT_MOST);</span><br><span class="line">        super.onMeasure(widthMeasureSpec, expandSpec);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如此便可以解决Recyclerview嵌套在ScrollView中显示子项不全的问题</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android屏幕适配（smallestWidth限定符适配）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

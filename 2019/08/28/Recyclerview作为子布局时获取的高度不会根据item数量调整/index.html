@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 陈泽浩的个人博客</title>
+  <title>Recyclerview作为子布局时获取的高度不会根据item数量调整 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陈泽浩的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="前言使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。 解决方法由于将Recyclerview的高度设置为wrap_co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recyclerview作为子布局时获取的高度不会根据item数量调整">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
+<meta property="og:description" content="前言使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。 解决方法由于将Recyclerview的高度设置为wrap_co">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201208/31/1346374636_1935.png">
+<meta property="og:updated_time" content="2019-08-28T06:01:29.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈泽浩的个人博客">
+<meta name="twitter:title" content="Recyclerview作为子布局时获取的高度不会根据item数量调整">
+<meta name="twitter:description" content="前言使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。 解决方法由于将Recyclerview的高度设置为wrap_co">
+<meta name="twitter:image" content="https://img-my.csdn.net/uploads/201208/31/1346374636_1935.png">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -150,32 +156,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Recyclerview作为子布局时获取的高度不会根据item数量调整" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
-  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">Recyclerview作为子布局时获取的高度不会根据item数量调整</a>
+    <h1 class="article-title" itemprop="name">
+      Recyclerview作为子布局时获取的高度不会根据item数量调整
     </h1>
   
 
@@ -185,123 +173,155 @@
       <i class="icon-smile icon"></i> 阅读数:<span id="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="pageViews">0</span>次
   </a>
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="archive-article-date">
-  	<time datetime="2019-08-07T15:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+        
+        
+<a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
+  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>由于将Recyclerview的高度设置为wrap_content，因此测量高度的时候是使用AT_MOST模式（这个也就是父组件能够给出的最大的空间，当前组件的长或宽最大只能为这么大，当然也可以比这个小），在这个模式下，测量的高度为父布局和子布局二者中高度小的那个，当Recyclerview的子项高度之和比父view的高度小时，则Recyclerview的高度为子项高度之和，当Recyclerview的子项高度之和比父view的高度大时，则使用的是父view的高度，因此会出现Recyclerview子项显示不全的情况。</p>
+<p>而针对该情况，我们需要重写Recyclerview的onMeasure函数，使Recyclerview在测量时获取父布局的高度最大值变得更大</p>
+<p>一个int类型我们知道有32位。而view的测量模式有三种，要表示三种状态，至少得2位二进制位。于是系统采用了最高的2位表示模式。如图：</p>
+<p><img src="https://img-my.csdn.net/uploads/201208/31/1346374636_1935.png" alt="img"></p>
+<p>后面30位代表的是组件的大小，因此可以将其全都置为1，也就是值为Integer.MAX_VALUE &gt;&gt; 2（30个1），因此无论Recyclerview的子项高度和多大都不可能比这个大，所以Recyclerview测量得到的高度就为其子项之和的高度</p>
+<p>重写的方法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)&#123;</span><br><span class="line">        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2,MeasureSpec.AT_MOST);</span><br><span class="line">        super.onMeasure(widthMeasureSpec, expandSpec);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如此便可以解决Recyclerview嵌套在ScrollView中显示子项不全的问题</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/">Android屏幕适配（smallestWidth限定符适配）</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
+      
 
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" class="archive-article-date">
-  	<time datetime="2019-08-04T08:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android屏幕适配（smallestWidth限定符适配）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/">Android中橡皮筋回弹和平移缩放效果</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
 
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/02/快速搭建个人博客（Hexo+Github）/" class="archive-article-date">
-  	<time datetime="2019-08-02T15:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/02/快速搭建个人博客（Hexo+Github）/">快速搭建个人博客（Hexo+Github）</a>
-    </h1>
-  
-
-
-
-  <a href="javascript:;" class="archive-article-date">
-      <i class="icon-smile icon"></i> 阅读数:<span id="/2019/08/02/快速搭建个人博客（Hexo+Github）/" class="pageViews">0</span>次
-  </a>
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -325,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
