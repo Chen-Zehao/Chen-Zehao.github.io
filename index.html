@@ -180,24 +180,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body String params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在使用retrofit2时，由于需要发送给后台string类型的数据，因此我Body注解中使用了String类型的变量，但是发送的数据并不是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json=&#123;&quot;aa&quot;:&quot;bb&quot;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>而是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;json=&#123;\&quot;aa\&quot;:\&quot;bb\&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>这并不是我们想要的让后台获取到的string字符串</p>
-<p>因此导致发送数据返回了错误结果</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将String替换成RequestBody即可解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body RequestBody params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用的时候将原本的string也进行相应的转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String strRequestBody = &quot;body&quot;; </span><br><span class="line">RequestBody requestBody = RequestBody.create(MediaType.parse(&quot;text/plain&quot;),strRequestBody);</span><br></pre></td></tr></table></figure>
-
-<p>参考来源<a href="http://cn.voidcc.com/question/p-gxmoinsg-qw.html" target="_blank" rel="noopener">http://cn.voidcc.com/question/p-gxmoinsg-qw.html</a></p>
-<p>## </p>
-
+        
       
 
       
@@ -267,16 +250,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>由于将Recyclerview的高度设置为wrap_content，因此测量高度的时候是使用AT_MOST模式（这个也就是父组件能够给出的最大的空间，当前组件的长或宽最大只能为这么大，当然也可以比这个小），在这个模式下，测量的高度为父布局和子布局二者中高度小的那个，当Recyclerview的子项高度之和比父view的高度小时，则Recyclerview的高度为子项高度之和，当Recyclerview的子项高度之和比父view的高度大时，则使用的是父view的高度，因此会出现Recyclerview子项显示不全的情况。</p>
-<p>而针对该情况，我们需要重写Recyclerview的onMeasure函数，使Recyclerview在测量时获取父布局的高度最大值变得更大</p>
-<p>一个int类型我们知道有32位。而view的测量模式有三种，要表示三种状态，至少得2位二进制位。于是系统采用了最高的2位表示模式。如图：</p>
-<p><img src="https://img-my.csdn.net/uploads/201208/31/1346374636_1935.png" alt="img"></p>
-<p>后面30位代表的是组件的大小，因此可以将其全都置为1，也就是值为Integer.MAX_VALUE &gt;&gt; 2（30个1），因此无论Recyclerview的子项高度和多大都不可能比这个大，所以Recyclerview测量得到的高度就为其子项之和的高度</p>
-<p>重写的方法如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)&#123;</span><br><span class="line">        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE &gt;&gt; 2,MeasureSpec.AT_MOST);</span><br><span class="line">        super.onMeasure(widthMeasureSpec, expandSpec);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>如此便可以解决Recyclerview嵌套在ScrollView中显示子项不全的问题</p>
-
+        
       
 
       
