@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-retrofit2-body提交String类型报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/15/retrofit2-body提交String类型报错/">retrofit2 @body提交String类型报错</a>
+    </h1>
+  
+
+
+
+  <a href="javascript:;" class="archive-article-date">
+      <i class="icon-smile icon"></i> 阅读数:<span id="/2019/09/15/retrofit2-body提交String类型报错/" class="pageViews">0</span>次
+  </a>
+
+        
+        
+<a href="/2019/09/15/retrofit2-body提交String类型报错/" class="archive-article-date">
+  	<time datetime="2019-09-15T12:10:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body String params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在使用retrofit2时，由于需要发送给后台string类型的数据，因此我Body注解中使用了String类型的变量，但是发送的数据并不是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json=&#123;&quot;aa&quot;:&quot;bb&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;json=&#123;\&quot;aa\&quot;:\&quot;bb\&quot;&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>这并不是我们想要的让后台获取到的string字符串</p>
+<p>因此导致发送数据返回了错误结果</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将String替换成RequestBody即可解决</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body RequestBody params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用的时候将原本的string也进行相应的转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String strRequestBody = &quot;body&quot;; </span><br><span class="line">RequestBody requestBody = RequestBody.create(MediaType.parse(&quot;text/plain&quot;),strRequestBody);</span><br></pre></td></tr></table></figure>
+
+<p>参考来源<a href="http://cn.voidcc.com/question/p-gxmoinsg-qw.html" target="_blank" rel="noopener">http://cn.voidcc.com/question/p-gxmoinsg-qw.html</a></p>
+<p>## </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/15/retrofit2-body提交String类型报错/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Recyclerview作为子布局时获取的高度不会根据item数量调整" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
