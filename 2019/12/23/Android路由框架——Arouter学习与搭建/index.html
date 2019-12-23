@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>陈泽浩的个人博客</title>
+  <title>Android路由框架——Arouter学习与搭建 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陈泽浩的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我Github上的Demo。接下来是Arouter框架的搭建步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android路由框架——Arouter学习与搭建">
+<meta property="og:url" content="http://yoursite.com/2019/12/23/Android路由框架——Arouter学习与搭建/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
+<meta property="og:description" content="前言因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我Github上的Demo。接下来是Arouter框架的搭建步骤">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png">
+<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577089266502.png">
+<meta property="og:updated_time" content="2019-12-23T08:46:16.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈泽浩的个人博客">
+<meta name="twitter:title" content="Android路由框架——Arouter学习与搭建">
+<meta name="twitter:description" content="前言因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我Github上的Demo。接下来是Arouter框架的搭建步骤">
+<meta name="twitter:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -150,16 +157,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Android路由框架——Arouter学习与搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Android路由框架——Arouter学习与搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/Android路由框架——Arouter学习与搭建/">Android路由框架——Arouter学习与搭建</a>
+    <h1 class="article-title" itemprop="name">
+      Android路由框架——Arouter学习与搭建
     </h1>
   
 
@@ -174,9 +179,103 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我<a href="https://github.com/Chen-Zehao/MyArouterTest" target="_blank" rel="noopener">Github上的Demo</a>。接下来是Arouter框架的搭建步骤</p>
-        
+<a id="more"></a>
+
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>新建一个Android空项目后，在gradle.properties文件中增加一个变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isModule=false</span><br></pre></td></tr></table></figure>
+
+<p>isModule是“集成开发模式”(false)和“组件开发模式”(true)的切换开关</p>
+<h3 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h3><p>创建module，我的Demo中有三个module，分别是libbase(依赖库)、login、main，然后再除了依赖库以外的module中的build.gradle文件头部添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (isModule.toBoolean()) &#123;  </span><br><span class="line">apply plugin: &apos;com.android.application&apos;</span><br><span class="line">&#125; else&#123;  </span><br><span class="line">apply plugin: &apos;com.android.library&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h3><p>接下来是app和module之间的一些依赖关系</p>
+<p>libbase主要是负责第三方库的引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;   </span><br><span class="line">implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])  </span><br><span class="line">testImplementation &apos;junit:junit:4.12&apos;   </span><br><span class="line">androidTestImplementation &apos;androidx.test.ext:junit:1.1.0&apos;  </span><br><span class="line">androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.1.1&apos;</span><br><span class="line">api &apos;androidx.constraintlayout:constraintlayout:1.1.3&apos;   </span><br><span class="line">api &apos;androidx.appcompat:appcompat:1.0.2&apos;   </span><br><span class="line">//Arouter</span><br><span class="line">api &apos;com.alibaba:arouter-api:1.5.0&apos;   </span><br><span class="line">//Butterknife</span><br><span class="line">api &apos;com.jakewharton:butterknife:10.2.1&apos;</span><br></pre></td></tr></table></figure>
+
+<p>implementation只对当前module有效，要在其他module可用的话需使用api，而且对需要使用到的module则需要添加annotationProcessor</p>
+<p>app：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</span><br><span class="line">    testImplementation &apos;junit:junit:4.12&apos;</span><br><span class="line">    androidTestImplementation &apos;androidx.test.ext:junit:1.1.0&apos;</span><br><span class="line">    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.1.1&apos;</span><br><span class="line">    </span><br><span class="line">    implementation project(&apos;:libbase&apos;)</span><br><span class="line">    if (!isModule.toBoolean()) &#123;</span><br><span class="line">        implementation project(&apos;:main&apos;)</span><br><span class="line">        implementation project(&apos;:login&apos;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    annotationProcessor &apos;com.alibaba:arouter-compiler:1.2.2&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step4"><a href="#Step4" class="headerlink" title="Step4"></a>Step4</h3><p>官方建议我们在Application里面进行ARouter初始化，于是在libbase目录下创建BaseApplication文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class BaseApplication extends Application &#123;</span><br><span class="line">    public static BaseApplication instance;</span><br><span class="line"></span><br><span class="line">    private boolean isDebug = true;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onCreate() &#123;</span><br><span class="line">        super.onCreate();</span><br><span class="line">        instance = this;</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init() &#123;</span><br><span class="line">        if (isDebug) &#123;</span><br><span class="line">            ARouter.openDebug();</span><br><span class="line">            ARouter.openLog();</span><br><span class="line">        &#125;</span><br><span class="line">        ARouter.init(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onTerminate() &#123;</span><br><span class="line">        super.onTerminate();</span><br><span class="line">        ARouter.getInstance().destroy();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step5"><a href="#Step5" class="headerlink" title="Step5"></a>Step5</h3><p>App以login为入口</p>
+<p>因为当前app的manifest文件是没有activity的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;com.scnu.myroutertest&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:name=&quot;com.scnu.libbase.BaseApplication&quot;</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+
+<p>因此在login的minifest下面有一个声明作为launcher的activity</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;com.scnu.login&quot;&gt;</span><br><span class="line">    &lt;application</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.LoginActivity&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;</span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;/&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step6"><a href="#Step6" class="headerlink" title="Step6"></a>Step6</h3><p>我们可以写一个常量文件来管理路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 统一管理路径</span><br><span class="line"> * Created by ChenZehao</span><br><span class="line"> * on 2019/12/20</span><br><span class="line"> */</span><br><span class="line">public final class Constance &#123;</span><br><span class="line">    public static final String ACTIVITY_URL_LOGIN = &quot;/login/LoginActivity&quot;;</span><br><span class="line">    public static final String ACTIVITY_URL_MAIN = &quot;/main/MainActivity&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><u>注意</u><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png" alt="1577088102227"></p>
+<p>这里路径包名不要重复，否则会报错com.alibaba.android.arouter.routes.ARouter$$Group$$activity</p>
+<h3 id="Step7"><a href="#Step7" class="headerlink" title="Step7"></a>Step7</h3><p>module的交互</p>
+<p>使用阿里的Arouter路由，在libbase中引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api &apos;com.alibaba:arouter-api:1.5.0&apos;</span><br></pre></td></tr></table></figure>
+
+<p>然后在各个module下面添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">annotationProcessor &apos;com.alibaba:arouter-compiler:1.2.2&apos;</span><br></pre></td></tr></table></figure>
+
+<p>然后在各个模块的build.gradle下的defaultConfig下添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javaCompileOptions &#123;</span><br><span class="line">            annotationProcessorOptions &#123;</span><br><span class="line">                arguments = [ AROUTER_MODULE_NAME : project.getName() ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>记住，这里要用<strong>AROUTER_MODULE_NAME</strong>而不是moduleName！</p>
+<p>然后就是使用了，在当前Activity和目标Activity上方添加Route注解</p>
+<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577089266502.png" alt="1577089266502"></p>
+<p>接下来是Activity的跳转</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ARouter.getInstance().build(Constance.ACTIVITY_URL_MAIN).navigation();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step8"><a href="#Step8" class="headerlink" title="Step8"></a>Step8</h3><p>关于Butterknife，我分享一下在组件化开发中要如何做才能正常使用</p>
+<p>(1)首先需要在项目的build.gradle中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classpath &apos;com.jakewharton:butterknife-gradle-plugin:10.2.1&apos;</span><br></pre></td></tr></table></figure>
+
+<p>(2)然后再各module的build.gradle头部引入插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.jakewharton.butterknife&apos;</span><br></pre></td></tr></table></figure>
+
+<p> dependencies 中添加依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">annotationProcessor &apos;com.jakewharton:butterknife-compiler:10.2.1&apos;</span><br></pre></td></tr></table></figure>
+
+<p>(3)注解使用的资源不能用R而是R2</p>
+<p>(4)需要用到butterknife的module的build.gradle中要添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step9"><a href="#Step9" class="headerlink" title="Step9"></a>Step9</h3><p>module在设置isModule=true之后就可以进行单独运行调试了，因此manifest也需要有两套</p>
+<p>所以需要在每个module的main目录下新建一个module目录，并且存放一个AndroidManifest文件</p>
+<p>这是module目录下的manifest文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;com.scnu.main&quot;&gt;</span><br><span class="line">    &lt;application</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.MainActivity&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;</span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;/&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是原有的manifest文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;com.scnu.main&quot;&gt;</span><br><span class="line">    &lt;application</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.MainActivity&quot;&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>对比可以发现单独运行调试需要有一个入口</strong></p>
+<p>在每个模块单独测试时把isModule设为true，最后设为false就可以合并测试了</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是我初步学习使用Arouter的一些总结了，如果讲得不清楚可以到GitHub上参考我的Demo代码。关于Arouter更多的功能和用法还在学习中…</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -185,16 +284,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/Android路由框架——Arouter学习与搭建/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/23/Android路由框架——Arouter学习与搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android TabLayout+ViewPager+Fragment使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -214,458 +372,14 @@
 
 
 
-
   
-    <article id="post-Android TabLayout+ViewPager+Fragment使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/">Android TabLayout+ViewPager+Fragment使用</a>
-    </h1>
   
 
-
-        
-        <a href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/" class="archive-article-date">
-  	<time datetime="2019-11-07T15:56:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为想实现底部导航栏的效果，查了一下发现大部分人都是用TabLayout+ViewPager+Fragment实现的，但是有时官方的TabLayout可能没办法满足实际开发需求，所以在这里推荐一个第三方库——<strong>FlycoTabLayout</strong>，使用起来相当简单，在这里我参考了<a href="https://blog.csdn.net/analyzesystem/article/details/51426473" target="_blank" rel="noopener">https://blog.csdn.net/analyzesystem/article/details/51426473</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在Recyclerview中使用Switch控件被复用的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/">在Recyclerview中使用Switch控件被复用的解决方法</a>
-    </h1>
   
 
-
-        
-        <a href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/" class="archive-article-date">
-  	<time datetime="2019-09-30T09:18:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Recyclerview中使用Switch控件时，遇到了一个以前没有遇过的问题————控件被复用，我点击了第一个开关，意外发现往后的每10个控件里面就有1个被打开了，网上很多方法试了都没用，于是改了一个上午才解决了这个问题。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-retrofit2-body提交String类型报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/15/retrofit2-body提交String类型报错/">retrofit2 @body提交String类型报错</a>
-    </h1>
   
 
-
-        
-        <a href="/2019/09/15/retrofit2-body提交String类型报错/" class="archive-article-date">
-  	<time datetime="2019-09-15T12:10:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body String params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/15/retrofit2-body提交String类型报错/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Recyclerview作为子布局时获取的高度不会根据item数量调整" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">Recyclerview作为子布局时获取的高度不会根据item数量调整</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
-  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android屏幕适配（smallestWidth限定符适配）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/">Android屏幕适配（smallestWidth限定符适配）</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="archive-article-date">
-  	<time datetime="2019-08-07T15:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android的屏幕适配网上有很多种方法，我觉得使用<strong>smallestWidth（最小宽度） 限定符</strong>来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了<a href="https://www.jianshu.com/p/1302ad5a4b04" target="_blank" rel="noopener">这篇博客</a></p>
-<hr>
-<h2 id="smallestWidth限定符原理"><a href="#smallestWidth限定符原理" class="headerlink" title="smallestWidth限定符原理"></a>smallestWidth限定符原理</h2><p>smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360dp 的设备上，系统会自动找到对应的 values-sw360dp 文件夹下的 dimens.xml 文件。区别就在于屏幕分辨率限定符适配是拿 px 值等比例缩放，而 smallestWidth 限定符适配是拿 dp 值来等比缩放而已。需要注意的是“最小宽度”是不区分方向的，即无论是宽度还是高度，哪一边小就认为哪一边是“最小宽度”。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android中橡皮筋回弹和平移缩放效果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/">Android中橡皮筋回弹和平移缩放效果</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" class="archive-article-date">
-  	<time datetime="2019-08-04T08:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于最近在做一个view的平移缩放功能以及橡皮筋效果，不过网上查到的大多数都是分开实现的，所以我这里把这两种功能整合到了一起</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-快速搭建个人博客（Hexo+Github）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/快速搭建个人博客（Hexo+Github）/">快速搭建个人博客（Hexo+Github）</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/08/02/快速搭建个人博客（Hexo+Github）/" class="archive-article-date">
-  	<time datetime="2019-08-02T15:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于我个人博客的搭建，我这里主要是参考b站一位up主的视频，使用的是Hexo+Github来搭建博客的，视频链接在这里：<a href="https://www.bilibili.com/video/av44544186?from=search&seid=2588649507689674146" target="_blank" rel="noopener">b站链接</a>，我这里主要是简单说明一下windows系统搭建博客的流程。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/快速搭建个人博客（Hexo+Github）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -689,8 +403,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
