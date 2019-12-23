@@ -15,13 +15,10 @@
 <meta property="og:site_name" content="陈泽浩的个人博客">
 <meta property="og:description" content="前言因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我Github上的Demo。接下来是Arouter框架的搭建步骤">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577089266502.png">
-<meta property="og:updated_time" content="2019-12-23T08:46:16.324Z">
+<meta property="og:updated_time" content="2019-12-23T09:18:14.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android路由框架——Arouter学习与搭建">
 <meta name="twitter:description" content="前言因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我Github上的Demo。接下来是Arouter框架的搭建步骤">
-<meta name="twitter:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -209,8 +206,9 @@
 <h3 id="Step6"><a href="#Step6" class="headerlink" title="Step6"></a>Step6</h3><p>我们可以写一个常量文件来管理路径</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 统一管理路径</span><br><span class="line"> * Created by ChenZehao</span><br><span class="line"> * on 2019/12/20</span><br><span class="line"> */</span><br><span class="line">public final class Constance &#123;</span><br><span class="line">    public static final String ACTIVITY_URL_LOGIN = &quot;/login/LoginActivity&quot;;</span><br><span class="line">    public static final String ACTIVITY_URL_MAIN = &quot;/main/MainActivity&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><u>注意</u><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577088102227.png" alt="1577088102227"></p>
-<p>这里路径包名不要重复，否则会报错com.alibaba.android.arouter.routes.ARouter$$Group$$activity</p>
+<p><u>注意</u></p>
+<p>/login/LoginActivity和/main/MainActivity</p>
+<p>这里路径包名不要重复，不要写成/app/LoginActivity和/app/MainActivity，否则会报错com.alibaba.android.arouter.routes.ARouter$$Group$$activity</p>
 <h3 id="Step7"><a href="#Step7" class="headerlink" title="Step7"></a>Step7</h3><p>module的交互</p>
 <p>使用阿里的Arouter路由，在libbase中引用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api &apos;com.alibaba:arouter-api:1.5.0&apos;</span><br></pre></td></tr></table></figure>
@@ -223,7 +221,8 @@
 
 <p>记住，这里要用<strong>AROUTER_MODULE_NAME</strong>而不是moduleName！</p>
 <p>然后就是使用了，在当前Activity和目标Activity上方添加Route注解</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1577089266502.png" alt="1577089266502"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Route(path = Constance.ACTIVITY_URL_LOGIN)</span><br><span class="line">public class LoginActivity extends BaseActivity</span><br></pre></td></tr></table></figure>
+
 <p>接下来是Activity的跳转</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ARouter.getInstance().build(Constance.ACTIVITY_URL_MAIN).navigation();</span><br></pre></td></tr></table></figure>
 
