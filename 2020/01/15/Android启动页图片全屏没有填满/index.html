@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 陈泽浩的个人博客</title>
+  <title>Android启动页图片全屏没有填满 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陈泽浩的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="前言我们经常会使用一张图片作为启动页，并且将其设置为全屏，我发现在我的手机上会出现状态栏没有隐藏，只是变成了黑色的情况 解决方法我原本使用的是在setContentView前添加这一行代码 1getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android启动页图片全屏没有填满">
+<meta property="og:url" content="http://yoursite.com/2020/01/15/Android启动页图片全屏没有填满/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
+<meta property="og:description" content="前言我们经常会使用一张图片作为启动页，并且将其设置为全屏，我发现在我的手机上会出现状态栏没有隐藏，只是变成了黑色的情况 解决方法我原本使用的是在setContentView前添加这一行代码 1getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCR">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-01-15T02:52:04.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈泽浩的个人博客">
+<meta name="twitter:title" content="Android启动页图片全屏没有填满">
+<meta name="twitter:description" content="前言我们经常会使用一张图片作为启动页，并且将其设置为全屏，我发现在我的手机上会出现状态栏没有隐藏，只是变成了黑色的情况 解决方法我原本使用的是在setContentView前添加这一行代码 1getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCR">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -150,312 +154,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Android启动页图片全屏没有填满" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Android启动页图片全屏没有填满
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/Android启动页图片全屏没有填满/" class="archive-article-date">
+
+
+        
+        <a href="/2020/01/15/Android启动页图片全屏没有填满/" class="archive-article-date">
   	<time datetime="2020-01-15T02:25:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/Android启动页图片全屏没有填满/">Android启动页图片全屏没有填满</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/" class="archive-article-date">
-  	<time datetime="2020-01-14T01:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/">Android中如何将jks签名文件转换为keystore文件</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们经常会使用一张图片作为启动页，并且将其设置为全屏，我发现在我的手机上会出现状态栏没有隐藏，只是变成了黑色的情况</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>我原本使用的是在setContentView前添加这一行代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);</span><br></pre></td></tr></table></figure>
+
+<p>目前不清楚是不是Android版本问题还是全面屏的问题，后面查了博客找到了解决方法</p>
+<p>将上面的代码替换成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE);</span><br></pre></td></tr></table></figure>
+
+<p>这个属性是用来实现<strong>“沉浸式”</strong>效果的，官方称作<strong>“Immersive full-screen mode”</strong>。</p>
+<p>就可以解决了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/Android路由框架——Arouter学习与搭建/" class="archive-article-date">
-  	<time datetime="2019-12-23T03:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/Android路由框架——Arouter学习与搭建/">Android路由框架——Arouter学习与搭建</a>
-    </h1>
-  
+      
 
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/15/Android启动页图片全屏没有填满/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/" class="archive-article-date">
-  	<time datetime="2019-11-07T15:56:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android中如何将jks签名文件转换为keystore文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/">Android TabLayout+ViewPager+Fragment使用</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/" class="archive-article-date">
-  	<time datetime="2019-09-30T09:18:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/">在Recyclerview中使用Switch控件被复用的解决方法</a>
-    </h1>
   
 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/15/retrofit2-body提交String类型报错/" class="archive-article-date">
-  	<time datetime="2019-09-15T12:10:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/15/retrofit2-body提交String类型报错/">retrofit2 @body提交String类型报错</a>
-    </h1>
   
 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
-  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">Recyclerview作为子布局时获取的高度不会根据item数量调整</a>
-    </h1>
   
 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="archive-article-date">
-  	<time datetime="2019-08-07T15:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/">Android屏幕适配（smallestWidth限定符适配）</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" class="archive-article-date">
-  	<time datetime="2019-08-04T08:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/">Android中橡皮筋回弹和平移缩放效果</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/02/快速搭建个人博客（Hexo+Github）/" class="archive-article-date">
-  	<time datetime="2019-08-02T15:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/02/快速搭建个人博客（Hexo+Github）/">快速搭建个人博客（Hexo+Github）</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -479,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
