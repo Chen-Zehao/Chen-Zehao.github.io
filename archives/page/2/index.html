@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Android中解决FragmentPagerAdapter刷新Fragment无效的问题 | 陈泽浩的个人博客</title>
+  <title>Archives | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言在项目中，我采用的是ViewPager+FragmentPagerAdapter+Fragment的方式，要实现fragment的刷新，但是发现并没有把ViewPager中的fragment替换掉，因此上网查阅了很多博客，最后解决了这个问题。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android中解决FragmentPagerAdapter刷新Fragment无效的问题">
-<meta property="og:url" content="http://yoursite.com/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="陈泽浩的个人博客">
+<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
-<meta property="og:description" content="前言在项目中，我采用的是ViewPager+FragmentPagerAdapter+Fragment的方式，要实现fragment的刷新，但是发现并没有把ViewPager中的fragment替换掉，因此上网查阅了很多博客，最后解决了这个问题。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-05T13:08:38.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中解决FragmentPagerAdapter刷新Fragment无效的问题">
-<meta name="twitter:description" content="前言在项目中，我采用的是ViewPager+FragmentPagerAdapter+Fragment的方式，要实现fragment的刷新，但是发现并没有把ViewPager中的fragment替换掉，因此上网查阅了很多博客，最后解决了这个问题。">
+<meta name="twitter:title" content="陈泽浩的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -154,188 +150,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android中解决FragmentPagerAdapter刷新Fragment无效的问题" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Android中解决FragmentPagerAdapter刷新Fragment无效的问题
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/02/快速搭建个人博客（Hexo+Github）/" class="archive-article-date">
+  	<time datetime="2019-08-02T15:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/02/快速搭建个人博客（Hexo+Github）/">快速搭建个人博客（Hexo+Github）</a>
     </h1>
   
 
 
-        
-        <a href="/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/" class="archive-article-date">
-  	<time datetime="2020-03-05T12:01:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在项目中，我采用的是ViewPager+FragmentPagerAdapter+Fragment的方式，要实现fragment的刷新，但是发现并没有把ViewPager中的fragment替换掉，因此上网查阅了很多博客，最后解决了这个问题。</p>
-<a id="more"></a>
+        <div class="article-info info-on-right">
+          
+          
 
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>我就直接贴上我的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class MyViewPagerAdapter extends FragmentPagerAdapter &#123;</span><br><span class="line"></span><br><span class="line">    private List&lt;Fragment&gt; mFragments = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    public MyViewPagerAdapter(@NonNull FragmentManager fm,  List&lt;Fragment&gt; mFragments) &#123;</span><br><span class="line">        super(fm);</span><br><span class="line">        this.mFragments = mFragments;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @NonNull</span><br><span class="line">    @Override</span><br><span class="line">    public Fragment getItem(int position) &#123;</span><br><span class="line">        return mFragments.get(position);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int getCount() &#123;</span><br><span class="line">        return mFragments.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    //原本ViewPager内存中缓存了Fragment，重写该方法使adapter重新创建新的Fragment</span><br><span class="line">    @Override</span><br><span class="line">    public long getItemId(int position) &#123;</span><br><span class="line">        return mFragments.get(position).hashCode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public int getItemPosition(Object object) &#123;</span><br><span class="line">        return POSITION_NONE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>主要是重写两个方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line"> public int getItemPosition(Object object) &#123;</span><br><span class="line">     return POSITION_NONE;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>设置POSITION_NONE的目的是可以执行instantiateItem，刷新Fragment就需要这行该函数。</p>
-<hr>
-<p>instantiateItem方法源码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public Object instantiateItem(ViewGroup container, int position) &#123;</span><br><span class="line">if (mCurTransaction == null) &#123;</span><br><span class="line">	mCurTransaction = mFragmentManager.beginTransaction();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">final long itemId = getItemId(position);</span><br><span class="line"></span><br><span class="line">// Do we already have this fragment?</span><br><span class="line">String name = makeFragmentName(container.getId(), itemId);</span><br><span class="line">Fragment fragment = mFragmentManager.findFragmentByTag(name);</span><br><span class="line">if (fragment != null) &#123;</span><br><span class="line">	if (DEBUG) Log.v(TAG, &quot;Attaching item #&quot; + itemId + &quot;: f=&quot; + fragment);</span><br><span class="line">	mCurTransaction.attach(fragment);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">	fragment = getItem(position);</span><br><span class="line">	if (DEBUG) Log.v(TAG, &quot;Adding item #&quot; + itemId + &quot;: f=&quot; + fragment);</span><br><span class="line">	mCurTransaction.add(container.getId(), fragment,</span><br><span class="line">	makeFragmentName(container.getId(), itemId));</span><br><span class="line">&#125;</span><br><span class="line">if (fragment != mCurrentPrimaryItem) &#123;</span><br><span class="line">	fragment.setMenuVisibility(false);</span><br><span class="line">	fragment.setUserVisibleHint(false);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return fragment;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们发现每次创建fragment时候，FragmentManager都会通过findFragmentByTag去缓存中查找，是否存在指定tagName的Fragment，有就复用，没有就创建新的Fragment，而这里的tagName就是通过getItemId()方法生成的。</p>
-<p>因此FragmentPagerAdapter是根据getItemId(int position)来判断当前position的Fragment是否存在的。</p>
-<p>而getItemId的源码是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public long getItemId(int position) &#123;</span><br><span class="line">        return position;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样的话getItemId返回的值并不唯一，会导致获取到的Fragment是旧的Fragment。</p>
-<p>因此我们需要让getItemId返回一个唯一的值，因此重写该方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public long getItemId(int position) &#123;</span><br><span class="line">	return mFragments.get(position).hashCode();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>之后调用pagerAdapter的notifyDataSetChanged方法就可以实现Fragment的刷新。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/03/26/Android-AppBarLayout子viewGONE掉后吸顶失效问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Android AppBarLayout子viewGONE掉后吸顶失效问题
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中如何将jks签名文件转换为keystore文件</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -360,8 +221,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
