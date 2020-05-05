@@ -6,24 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Android屏幕适配（smallestWidth限定符适配） | 陈泽浩的个人博客</title>
+  <title>Android设置图片宽度固定，高度自适应 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
+  <meta name="description" content="Android设置图片宽度固定，高度自适应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android屏幕适配（smallestWidth限定符适配）">
-<meta property="og:url" content="http://yoursite.com/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/index.html">
+<meta property="og:title" content="Android设置图片宽度固定，高度自适应">
+<meta property="og:url" content="http://yoursite.com/2020/04/04/Android设置图片宽度固定，高度自适应/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
-<meta property="og:description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
+<meta property="og:description" content="Android设置图片宽度固定，高度自适应">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195421450.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195917762.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195957249.png">
-<meta property="og:updated_time" content="2020-04-13T12:49:03.218Z">
+<meta property="og:updated_time" content="2020-04-04T09:22:05.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android屏幕适配（smallestWidth限定符适配）">
-<meta name="twitter:description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
-<meta name="twitter:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png">
+<meta name="twitter:title" content="Android设置图片宽度固定，高度自适应">
+<meta name="twitter:description" content="Android设置图片宽度固定，高度自适应">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -159,54 +154,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android屏幕适配（smallestWidth限定符适配）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android设置图片宽度固定，高度自适应" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android屏幕适配（smallestWidth限定符适配）
+      Android设置图片宽度固定，高度自适应
     </h1>
   
 
 
         
-        <a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="archive-article-date">
-  	<time datetime="2019-08-07T15:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+        <a href="/2020/04/04/Android设置图片宽度固定，高度自适应/" class="archive-article-date">
+  	<time datetime="2020-04-04T07:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android的屏幕适配网上有很多种方法，我觉得使用<strong>smallestWidth（最小宽度） 限定符</strong>来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了<a href="https://www.jianshu.com/p/1302ad5a4b04" target="_blank" rel="noopener">这篇博客</a></p>
-<hr>
-<h2 id="smallestWidth限定符原理"><a href="#smallestWidth限定符原理" class="headerlink" title="smallestWidth限定符原理"></a>smallestWidth限定符原理</h2><p>smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360dp 的设备上，系统会自动找到对应的 values-sw360dp 文件夹下的 dimens.xml 文件。区别就在于屏幕分辨率限定符适配是拿 px 值等比例缩放，而 smallestWidth 限定符适配是拿 dp 值来等比缩放而已。需要注意的是“最小宽度”是不区分方向的，即无论是宽度还是高度，哪一边小就认为哪一边是“最小宽度”。</p>
+        <p>Android设置图片宽度固定，高度自适应</p>
 <a id="more"></a>
 
-<hr>
-<h2 id="smallestWidth限定符的好处"><a href="#smallestWidth限定符的好处" class="headerlink" title="smallestWidth限定符的好处"></a>smallestWidth限定符的好处</h2><p>1、屏幕分辨率限定符适配是根据屏幕分辨率的，Android 设备分辨率一大堆，而且还要考虑虚拟键盘，这样就需要大量的 dimens.xml 文件。因为无论手机屏幕的像素多少，密度多少，90% 的手机的最小宽度都为 360dp，所以采用smallestWidth 限定符适配只需要少量 dimens.xml 文件即可。</p>
-<p>2、屏幕分辨率限定符适配采用的是 px 单位，而 smallestWidth 限定符适配采用的单位是 dp 和 sp，可以对字体也进行适配。</p>
-<p>3、屏幕分辨率限定符适配需要设备分辨率与 values-xx 文件夹完全匹配才能达到适配，而 smallestWidth 限定符适配寻找 dimens.xml 文件的原理是从大往小找，例如设备的最小宽度为 360dp，就会先去找 values-360dp，发现没有则会向下找 values-320dp，如果还是没有才找默认的 values 下的 demens.xml 文件，所以即使没有完全匹配也能达到不错的适配效果。</p>
-<hr>
-<h2 id="smallestWidth限定符的使用"><a href="#smallestWidth限定符的使用" class="headerlink" title="smallestWidth限定符的使用"></a>smallestWidth限定符的使用</h2><h3 id="1、在-Android-Studio-中安装-ScreenMatch-插件"><a href="#1、在-Android-Studio-中安装-ScreenMatch-插件" class="headerlink" title="1、在 Android Studio 中安装 ScreenMatch 插件"></a>1、在 Android Studio 中安装 ScreenMatch 插件</h3><h3 id><a href="#" class="headerlink" title></a><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png" alt="1565194437102"></h3><p>通过File -&gt; Settings -&gt; Plugins -&gt; browse repositories搜索ScreenMatch插件并且安装，安装后重启Android Studio</p>
-<h3 id="2、在项目的res-values中需要有dimens-xml文件"><a href="#2、在项目的res-values中需要有dimens-xml文件" class="headerlink" title="2、在项目的res/values中需要有dimens.xml文件"></a>2、在项目的res/values中需要有dimens.xml文件</h3><p>这里可以有别人的<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwildma%2FScreenAdaptation%2Fblob%2Fmaster%2Fapp%2Fsrc%2Fmain%2Fres%2Fvalues%2Fdimens.xml" target="_blank" rel="noopener">dimens文件源码</a></p>
-<p>可以直接复制，并且可以在这个基础上进行修改</p>
-<h3 id="3、生成其他尺寸的dimens-xml"><a href="#3、生成其他尺寸的dimens-xml" class="headerlink" title="3、生成其他尺寸的dimens.xml"></a>3、生成其他尺寸的dimens.xml</h3><p>插件安装好后，在项目的任意目录或文件上右键，选择 ScreenMatch 选项</p>
-<p>它会以res/values/dimens.xml 文件作为基准进行生成，执行成功之后res目录下会自动生成一堆dimens文件</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195421450.png" alt="1565195421450"></p>
-<h3 id="4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp"><a href="#4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp" class="headerlink" title="4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp"></a>4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp</h3><p>插件默认的最小宽度基准值为 360dp，适配的设备最小宽度为320,360,384,392.7272,400,410,411.4285,432,480,533,592,600,640,662,720,768,800,811,820,960,961,1024,1280,1365（包含了平板和 TV ）生成的文件，但实际情况要根据设计图和需求设置。</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195917762.png" alt="1565195917762"></p>
-<p>我们需要对该文件进行修改</p>
-<p>打开配置文件，修改下图中 1、3、4 的值即可。(图中单位均为 dp)</p>
-<p>1、最小宽度基准值，填写设计图的最小宽度值即可。（默认为360dp）</p>
-<p>2、插件默认适配的最小宽度值，即默认情况下会生成如下值的 dimens.xml 文件。</p>
-<p>3、需要适配的最小宽度值（如果是小数，则保留4位小数），即你想生成哪些 dimens.xml 文件。（不填就是按照步骤2中的宽度值）</p>
-<p>4、忽略不需要适配的最小宽度值，即忽略掉插件默认生成的 dimens.xml 文件。</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195957249.png" alt="1565195957249"></p>
-<p>配置文件修改完成后，重新执行第 3 步，生成新的 dimens.xml 文件。</p>
-<h3 id="5、在xml中使用"><a href="#5、在xml中使用" class="headerlink" title="5、在xml中使用"></a>5、在xml中使用</h3><p>原本的100dp则改为@dimen/dp_100（具体看res/values/dimens.xml文件，适配以该文件为基准，正常选择的模拟器也是360dp，即780*1280px）</p>
+<p>我们在使用imageView固定宽度时，如果要让图片在填满宽度的同时高度自适应，那么我们在xml文件中需要设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">android:adjustViewBounds=&quot;true&quot;</span><br></pre></td></tr></table></figure>
+
+<p>当imageView一边高度固定，另一边为wrap_content时，将adjustViewBounds设置为true，可以让ImageView的比例和原始图片一样，以达到让图片充满的ImageView的效果。</p>
 
       
 
@@ -286,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/04/Android设置图片宽度固定，高度自适应/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/03/Android-通用监听器的封装/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Recyclerview作为子布局时获取的高度不会根据item数量调整
+          Android 通用监听器的封装
         
       </div>
     </a>
   
   
-    <a href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中橡皮筋回弹和平移缩放效果</div>
+    <a href="/2020/03/26/Android-AppBarLayout子viewGONE掉后吸顶失效问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android AppBarLayout子viewGONE掉后吸顶失效问题</div>
       <i class="icon-circle-right"></i>
     </a>
   

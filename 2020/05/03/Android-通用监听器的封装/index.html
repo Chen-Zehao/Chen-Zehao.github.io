@@ -6,24 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Android屏幕适配（smallestWidth限定符适配） | 陈泽浩的个人博客</title>
+  <title>Android 通用监听器的封装 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
+  <meta name="description" content="前言在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android屏幕适配（smallestWidth限定符适配）">
-<meta property="og:url" content="http://yoursite.com/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/index.html">
+<meta property="og:title" content="Android 通用监听器的封装">
+<meta property="og:url" content="http://yoursite.com/2020/05/03/Android-通用监听器的封装/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
-<meta property="og:description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
+<meta property="og:description" content="前言在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195421450.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195917762.png">
-<meta property="og:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195957249.png">
-<meta property="og:updated_time" content="2020-04-13T12:49:03.218Z">
+<meta property="og:updated_time" content="2020-05-05T14:52:33.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android屏幕适配（smallestWidth限定符适配）">
-<meta name="twitter:description" content="前言Android的屏幕适配网上有很多种方法，我觉得使用smallestWidth（最小宽度） 限定符来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了这篇博客  smallestWidth限定符原理smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360d">
-<meta name="twitter:image" content="c:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png">
+<meta name="twitter:title" content="Android 通用监听器的封装">
+<meta name="twitter:description" content="前言在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -159,54 +154,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Android屏幕适配（smallestWidth限定符适配）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android-通用监听器的封装" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Android屏幕适配（smallestWidth限定符适配）
+      Android 通用监听器的封装
     </h1>
   
 
 
         
-        <a href="/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" class="archive-article-date">
-  	<time datetime="2019-08-07T15:38:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+        <a href="/2020/05/03/Android-通用监听器的封装/" class="archive-article-date">
+  	<time datetime="2020-05-03T13:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android的屏幕适配网上有很多种方法，我觉得使用<strong>smallestWidth（最小宽度） 限定符</strong>来进行适配是相对简单一点的，并且所需的dimens文件也不会特别多，这里我是参考了<a href="https://www.jianshu.com/p/1302ad5a4b04" target="_blank" rel="noopener">这篇博客</a></p>
-<hr>
-<h2 id="smallestWidth限定符原理"><a href="#smallestWidth限定符原理" class="headerlink" title="smallestWidth限定符原理"></a>smallestWidth限定符原理</h2><p>smallestWidth 限定符适配原理与屏幕分辨率限定符适配原理一样，系统都是根据限定符去寻找对应的 dimens.xml 文件。例如程序运行在最小宽度为 360dp 的设备上，系统会自动找到对应的 values-sw360dp 文件夹下的 dimens.xml 文件。区别就在于屏幕分辨率限定符适配是拿 px 值等比例缩放，而 smallestWidth 限定符适配是拿 dp 值来等比缩放而已。需要注意的是“最小宽度”是不区分方向的，即无论是宽度还是高度，哪一边小就认为哪一边是“最小宽度”。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。</p>
 <a id="more"></a>
 
-<hr>
-<h2 id="smallestWidth限定符的好处"><a href="#smallestWidth限定符的好处" class="headerlink" title="smallestWidth限定符的好处"></a>smallestWidth限定符的好处</h2><p>1、屏幕分辨率限定符适配是根据屏幕分辨率的，Android 设备分辨率一大堆，而且还要考虑虚拟键盘，这样就需要大量的 dimens.xml 文件。因为无论手机屏幕的像素多少，密度多少，90% 的手机的最小宽度都为 360dp，所以采用smallestWidth 限定符适配只需要少量 dimens.xml 文件即可。</p>
-<p>2、屏幕分辨率限定符适配采用的是 px 单位，而 smallestWidth 限定符适配采用的单位是 dp 和 sp，可以对字体也进行适配。</p>
-<p>3、屏幕分辨率限定符适配需要设备分辨率与 values-xx 文件夹完全匹配才能达到适配，而 smallestWidth 限定符适配寻找 dimens.xml 文件的原理是从大往小找，例如设备的最小宽度为 360dp，就会先去找 values-360dp，发现没有则会向下找 values-320dp，如果还是没有才找默认的 values 下的 demens.xml 文件，所以即使没有完全匹配也能达到不错的适配效果。</p>
-<hr>
-<h2 id="smallestWidth限定符的使用"><a href="#smallestWidth限定符的使用" class="headerlink" title="smallestWidth限定符的使用"></a>smallestWidth限定符的使用</h2><h3 id="1、在-Android-Studio-中安装-ScreenMatch-插件"><a href="#1、在-Android-Studio-中安装-ScreenMatch-插件" class="headerlink" title="1、在 Android Studio 中安装 ScreenMatch 插件"></a>1、在 Android Studio 中安装 ScreenMatch 插件</h3><h3 id><a href="#" class="headerlink" title></a><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565194437102.png" alt="1565194437102"></h3><p>通过File -&gt; Settings -&gt; Plugins -&gt; browse repositories搜索ScreenMatch插件并且安装，安装后重启Android Studio</p>
-<h3 id="2、在项目的res-values中需要有dimens-xml文件"><a href="#2、在项目的res-values中需要有dimens-xml文件" class="headerlink" title="2、在项目的res/values中需要有dimens.xml文件"></a>2、在项目的res/values中需要有dimens.xml文件</h3><p>这里可以有别人的<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fwildma%2FScreenAdaptation%2Fblob%2Fmaster%2Fapp%2Fsrc%2Fmain%2Fres%2Fvalues%2Fdimens.xml" target="_blank" rel="noopener">dimens文件源码</a></p>
-<p>可以直接复制，并且可以在这个基础上进行修改</p>
-<h3 id="3、生成其他尺寸的dimens-xml"><a href="#3、生成其他尺寸的dimens-xml" class="headerlink" title="3、生成其他尺寸的dimens.xml"></a>3、生成其他尺寸的dimens.xml</h3><p>插件安装好后，在项目的任意目录或文件上右键，选择 ScreenMatch 选项</p>
-<p>它会以res/values/dimens.xml 文件作为基准进行生成，执行成功之后res目录下会自动生成一堆dimens文件</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195421450.png" alt="1565195421450"></p>
-<h3 id="4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp"><a href="#4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp" class="headerlink" title="4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp"></a>4、根据设计图填写最小宽度基准值，并且填写需要适配的最小宽度dp</h3><p>插件默认的最小宽度基准值为 360dp，适配的设备最小宽度为320,360,384,392.7272,400,410,411.4285,432,480,533,592,600,640,662,720,768,800,811,820,960,961,1024,1280,1365（包含了平板和 TV ）生成的文件，但实际情况要根据设计图和需求设置。</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195917762.png" alt="1565195917762"></p>
-<p>我们需要对该文件进行修改</p>
-<p>打开配置文件，修改下图中 1、3、4 的值即可。(图中单位均为 dp)</p>
-<p>1、最小宽度基准值，填写设计图的最小宽度值即可。（默认为360dp）</p>
-<p>2、插件默认适配的最小宽度值，即默认情况下会生成如下值的 dimens.xml 文件。</p>
-<p>3、需要适配的最小宽度值（如果是小数，则保留4位小数），即你想生成哪些 dimens.xml 文件。（不填就是按照步骤2中的宽度值）</p>
-<p>4、忽略不需要适配的最小宽度值，即忽略掉插件默认生成的 dimens.xml 文件。</p>
-<p><img src="C:%5CUsers%5CChenZehao%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1565195957249.png" alt="1565195957249"></p>
-<p>配置文件修改完成后，重新执行第 3 步，生成新的 dimens.xml 文件。</p>
-<h3 id="5、在xml中使用"><a href="#5、在xml中使用" class="headerlink" title="5、在xml中使用"></a>5、在xml中使用</h3><p>原本的100dp则改为@dimen/dp_100（具体看res/values/dimens.xml文件，适配以该文件为基准，正常选择的模拟器也是360dp，即780*1280px）</p>
+<h2 id="常规方法"><a href="#常规方法" class="headerlink" title="常规方法"></a>常规方法</h2><p>正常我们在Dialog中实现对某个点击事件的监听，应该类似如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public interface OnClickListener&#123;</span><br><span class="line">	void onClick();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private OnClickListener onClickListener;</span><br><span class="line"></span><br><span class="line">public void setOnClickListener(OnClickListener listener)&#123;</span><br><span class="line">	onClickListener = listener;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在控件的点击事件下添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(null != onClickListener)&#123;</span><br><span class="line">	onClickListener.onClick();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后在外部Activity中给dialog设置监听器便可以实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mDialog.setOnClickListener(new OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick()&#123;</span><br><span class="line">		//此处处理点击事件</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>然而，这样做的话我们如果在点击事件中要添加参数，例如加多一个String的参数，那么我们便需要将onClick()改为onClick(String str)，这样的话其实对后期维护的话不太方便，特别是代码量大的情况。另外每一个Dialog定义一个监听接口，这样改起来也会很麻烦，最好的方法就是封装一个足够通用的监听器，这样的话能大大提高我们的开发效率。</p>
+<h2 id="通用封装"><a href="#通用封装" class="headerlink" title="通用封装"></a>通用封装</h2><p>我们可以在接口的抽象方法中增加几个参数，添加后如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface OnClickListener&#123;</span><br><span class="line">	void onClick(int type, String msg, DataEntity entity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面我来说一下这几个参数代表的含义：type代表的是事件类型，因为每一个控件点击时触发的是不同的事件，那么我们可以将每一个事件都用一个类型来表示；msg这个参数只是单纯作为一个标记，使自己知道这个点击事件的具体作用；而entity代表保存的数据，我们可以将数据以hashmap的形式保存到entity中。</p>
+<p>DataEntity这个类可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class DataEntity&#123;</span><br><span class="line">	privatet final private Map&lt;String,String&gt; mapStr = new LinkedHashMap&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	public String get(String key)&#123;</span><br><span class="line">		return mapStr.get(key);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void putStr(String key,String value)&#123;</span><br><span class="line">		mapStr.put(key,value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大概是这个样子，具体还是得自己想想怎么写比较好，这里只是供大家作一个参考。</p>
+<p>这样的话方法的调用可以这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(null != onClickListener)&#123;</span><br><span class="line">	DataEntity entity = new DataEntity();</span><br><span class="line">	entity.put(&quot;key&quot;,&quot;value&quot;);</span><br><span class="line">	int type = 0;</span><br><span class="line">	onClickListener.onClick(type,&quot;点击事件&quot;,entity);//type可以在一个枚举类中定义一系列点击事件的类型</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在外部的处理是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mDialog.setOnClickListener(new OnClickListener()&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void onClick(int type,String msg,DataEntity entity)&#123;</span><br><span class="line">		//此处处理点击事件</span><br><span class="line">		if(type == 0)&#123;</span><br><span class="line">			String value = entity.get(&quot;key&quot;);	</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这样的话我们如果需要增加或者删减参数只需要对entity进行修改，并不需要改到监听器的方法，可以使维护难度大大降低。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是Android中通用监听器封装的一个思路，这也是我最近刚学到的方法，觉得特别有用，所以想跟大家一起分享，具体的实现大家可以自己想想怎么封装会更好，更有利于开发。</p>
 
       
 
@@ -286,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/Android屏幕适配（smallestWidth限定符适配）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/03/Android-通用监听器的封装/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +297,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Recyclerview作为子布局时获取的高度不会根据item数量调整
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/04/Android中橡皮筋回弹和平移缩放效果/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android中橡皮筋回弹和平移缩放效果</div>
+    <a href="/2020/04/04/Android设置图片宽度固定，高度自适应/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android设置图片宽度固定，高度自适应</div>
       <i class="icon-circle-right"></i>
     </a>
   
