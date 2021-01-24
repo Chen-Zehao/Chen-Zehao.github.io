@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ARTS打卡第一周（2021.1.10） | 陈泽浩的个人博客</title>
+  <title>ARTS打卡第二周（2021.1.17） | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="什么是ARTS打卡计划？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARTS打卡第一周（2021.1.10）">
-<meta property="og:url" content="http://yoursite.com/2021/01/10/ARTS打卡第一周（2021.1.10）/index.html">
+<meta property="og:title" content="ARTS打卡第二周（2021.1.17）">
+<meta property="og:url" content="http://yoursite.com/2021/01/17/ARTS打卡第二周（2021.1.17）/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
 <meta property="og:description" content="什么是ARTS打卡计划？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-01-24T09:00:41.813Z">
+<meta property="og:updated_time" content="2021-01-24T09:01:39.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARTS打卡第一周（2021.1.10）">
+<meta name="twitter:title" content="ARTS打卡第二周（2021.1.17）">
 <meta name="twitter:description" content="什么是ARTS打卡计划？">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
@@ -154,21 +154,21 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ARTS打卡第一周（2021.1.10）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ARTS打卡第二周（2021.1.17）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ARTS打卡第一周（2021.1.10）
+      ARTS打卡第二周（2021.1.17）
     </h1>
   
 
 
         
-        <a href="/2021/01/10/ARTS打卡第一周（2021.1.10）/" class="archive-article-date">
-  	<time datetime="2021-01-10T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+        <a href="/2021/01/17/ARTS打卡第二周（2021.1.17）/" class="archive-article-date">
+  	<time datetime="2021-01-17T13:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-17</time>
 </a>
         
       </header>
@@ -189,27 +189,57 @@
 <h3 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h3><blockquote>
 <p>分享一篇有观点和思考的技术文章。主要是为了建立你的影响力，能够输出价值观。</p>
 </blockquote>
-<h2 id="Algorithm-1"><a href="#Algorithm-1" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目描述<br>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为 O(n).<br>输入：[1,-2,3,10,-4,7,2,-5]<br>返回值：18<br>说明：输入的数组为{1,-2,3,10,—4,7,2,一5}，和最大的子数组为{3,10,一4,7,2}，因此输出为该子数组的和 18。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int FindGreatestSumOfSubArray(int[] array) &#123;</span><br><span class="line">        int max = array[0];</span><br><span class="line">        int cur = max;</span><br><span class="line">        for(int i = 1; i &lt; array.length; i++)&#123;</span><br><span class="line">            if(cur &lt;= 0 &amp;&amp; array[i] &lt;= 0)&#123;</span><br><span class="line">                if(array[i] &gt; max)&#123;</span><br><span class="line">                    max = array[i];</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur &lt;=0 &amp;&amp; array[i] &gt; 0)&#123;</span><br><span class="line">                cur = array[i];</span><br><span class="line">                if(cur &gt; max)&#123;</span><br><span class="line">                    max = cur;</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur + array[i] &lt;= 0)&#123;</span><br><span class="line">                cur = array[i];</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur + array[i] &gt; 0 )&#123;</span><br><span class="line">                cur += array[i];</span><br><span class="line">                if(cur &gt; max)&#123;</span><br><span class="line">                    max = cur;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(cur &gt; max)&#123;</span><br><span class="line">            max = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Algorithm-1"><a href="#Algorithm-1" class="headerlink" title="Algorithm"></a>Algorithm</h2><h3 id="一、第一个只出现一次的字符位置"><a href="#一、第一个只出现一次的字符位置" class="headerlink" title="一、第一个只出现一次的字符位置"></a>一、第一个只出现一次的字符位置</h3><p>题目描述</p>
+<p>在一个字符串(0&lt;=字符串长度&lt;=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1（需要区分大小写）.（从0开始计数）</p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;google&quot;</span><br></pre></td></tr></table></figure>
 
-<p>更优做法：动态规划</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">	public int FindGreatestSumOfSubArray(int[] array) &#123;</span><br><span class="line">		int max = array[0];</span><br><span class="line">         for(int i = 1; i &lt; array.length; i++)&#123;</span><br><span class="line">             array[i] += array[i-1] &gt; 0 ? array[i-1]: 0;</span><br><span class="line">             max = Math.max(max,array[i]);</span><br><span class="line">         &#125;</span><br><span class="line">         return max;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
 
-<h2 id="Review-1"><a href="#Review-1" class="headerlink" title="Review"></a>Review</h2><p>阅读文章：<a href="https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2" target="_blank" rel="noopener">https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2</a></p>
-<p>该文章主要是讲述使用Android Studio的一些小技巧、插件以及一些优秀文章。</p>
-<p>下面是我认为对我帮助较大的几个使用Android Studio的快捷键：</p>
-<p>1、Windows下使用<strong>alt+j</strong>可以<strong>同时修改</strong>多出相同语句或单词。</p>
-<p>2、Windows下使用<strong>ctrl+alt+b</strong>点击接口名称可以<strong>快速定位</strong>到实现接口的实现类；反之，使用<strong>ctrl+b</strong>可以<strong>快速定位</strong>到<strong>类/方法/变量</strong>的<strong>声明</strong>。</p>
-<p>3、Windows下使用<strong>ctrl+shift+b</strong>可以快速定位到<strong>变量类型</strong>所在的类。</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee employee = new Employee(“Michal”);</span><br></pre></td></tr></table></figure>
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int FirstNotRepeatingChar(String str) &#123;</span><br><span class="line">        if(str == null || str.length() == 0)&#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        int j;</span><br><span class="line">        for(int i = 0; i &lt; str.length(); i++)&#123;</span><br><span class="line">            for(j = 0; j &lt; str.length(); j++)&#123;</span><br><span class="line">                if(str.charAt(i) == str.charAt(j)&amp;&amp;(j!= i))&#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(j == str.length())&#123;</span><br><span class="line">                return i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>使用该快捷键点击employee变量名可以跳转到Employee的类。</p>
-<p>4、Windows下使用<strong>ctrl+u</strong>点击<strong>某个方法</strong>里的任意位置，都会跳转到该方法的<strong>父方法</strong>中。</p>
-<p>5、Windows下使用<strong>ctrl+F4</strong>可以快速<strong>关闭当前Tab</strong>。</p>
-<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><h3 id="1、学习runtime文件夹的作用与provided依赖"><a href="#1、学习runtime文件夹的作用与provided依赖" class="headerlink" title="1、学习runtime文件夹的作用与provided依赖"></a>1、学习runtime文件夹的作用与provided依赖</h3><p>作用：主要用于提供编译支持，最终打包时不会将其打入apk文件<br>区别：使用eclipse开发时，需要将相应jar包放入runtime文件夹；而后面使用Android Studio开发，只需要使用provided指令即可</p>
-<h3 id="2、gradle编译时报错-NDK-is-missing-a-“platforms”-directory"><a href="#2、gradle编译时报错-NDK-is-missing-a-“platforms”-directory" class="headerlink" title="2、gradle编译时报错 NDK is missing a “platforms” directory."></a>2、gradle编译时报错 NDK is missing a “platforms” directory.</h3><p>If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to D:\AndroidStudioSDK\ndk-bundle.<br>If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.<br>原因： 使用Android gradle插件2.3（com.android.tools.build:gradle:2.3.0）可能会出现该问题，Android Studio3.5没出现，Android Studio升到4.1后出现了该问题<br>解决方案：检查工程中是否存在该版本的gradle tools，若存在该版本，则需要进行替换</p>
-<h2 id="Share-1"><a href="#Share-1" class="headerlink" title="Share"></a>Share</h2><p>第一次接触<a href="http://medium.xn--com()-r47iu21fp63donza/" target="_blank" rel="noopener">http://Medium.com</a> 这个网站，发现里面有很多英文的技术文章可以学习，以后也会尽量坚持阅读（不过需要梯子）。</p>
+<h3 id="二、二叉搜索数的第k个结点"><a href="#二、二叉搜索数的第k个结点" class="headerlink" title="二、二叉搜索数的第k个结点"></a>二、二叉搜索数的第k个结点</h3><p>题目描述</p>
+<p>给定一棵二叉搜索树，请找出其中的第k小的结点。</p>
+<p>示例1</p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;5,3,7,2,4,6,8&#125;,3</span><br></pre></td></tr></table></figure>
+
+<p>返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;4&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按结点数值大小顺序第三小结点的值为4</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">public class TreeNode &#123;</span><br><span class="line">    int val = 0;</span><br><span class="line">    TreeNode left = null;</span><br><span class="line">    TreeNode right = null;</span><br><span class="line"></span><br><span class="line">    public TreeNode(int val) &#123;</span><br><span class="line">        this.val = val;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    ArrayList&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">    TreeNode KthNode(TreeNode pRoot, int k)</span><br><span class="line">    &#123;</span><br><span class="line">        if(pRoot == null || k == 0)&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        midOrderTraverse(pRoot);</span><br><span class="line">        if(list.size() &gt;= k)&#123;</span><br><span class="line">            return list.get(k-1);</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void midOrderTraverse(TreeNode root)&#123;</span><br><span class="line">        if(null != root)&#123;</span><br><span class="line">            midOrderTraverse(root.left);</span><br><span class="line">            list.add(root);</span><br><span class="line">            midOrderTraverse(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Review-1"><a href="#Review-1" class="headerlink" title="Review"></a>Review</h2><p>阅读文章：<a href="https://blog.aritraroy.in/what-my-2-years-of-android-development-have-taught-me-the-hard-way-52b495ba5c51" target="_blank" rel="noopener">https://blog.aritraroy.in/what-my-2-years-of-android-development-have-taught-me-the-hard-way-52b495ba5c51</a></p>
+<p>该文章主要是讲述作者分享的一些经验。</p>
+<p>简洁概括成以下内容：</p>
+<p>（1）不要重复造轮子。若有适合的第三方库可以直接使用，让你可以侧重完成业务逻辑。</p>
+<p>（2）多阅读开源项目（越多star越好）；不要盲目使用；查看项目issues或许能有一些收获；有时间的话可以阅读源码，学习其优点。</p>
+<p>（3）坚持阅读开源项目源码，并推荐了一些开源项目：<a href="https://snowdream.github.io/awesome-android/，https://github.com/pcqpcq/open-source-android-apps。" target="_blank" rel="noopener">https://snowdream.github.io/awesome-android/，https://github.com/pcqpcq/open-source-android-apps。</a></p>
+<p>（4）注意代码规范。尽量使代码更加简洁、可读，并推荐以下内容：<a href="https://source.android.com/source/code-style.html，https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md。" target="_blank" rel="noopener">https://source.android.com/source/code-style.html，https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md。</a></p>
+<p>（5）务必使用混淆。若应用没混淆就发布到应用商店，会被轻易破解。若需要更加安全可以使用<a href="https://www.guardsquare.com/dexguard" target="_blank" rel="noopener">DexGuard</a>。</p>
+<p>（6） 使用适当的架构。在搭建项目最好先选择合适的架构，有利于项目解耦以及减少维护成本。可以参考<a href="https://github.com/android10/Android-CleanArchitecture" target="_blank" rel="noopener">demo project</a>，以及一些对初学者的一份<a href="https://medium.com/@dmilicic/a-detailed-guide-on-developing-android-apps-using-the-clean-architecture-pattern-d38d71e94029#.plhx8vhi3" target="_blank" rel="noopener">指南</a>。</p>
+<p>（7）用户体验十分重要，尽可能设计出干净、简洁、美观的界面（独立开发者需要注意这点）。并且推荐了能让我们获得灵感的网址<a href="http://materialup.com/" target="_blank" rel="noopener">MaterialUp</a>和书籍<a href="https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654" target="_blank" rel="noopener">The Design of Everyday Things</a>。</p>
+<p>（8）做好分析。分析统计崩溃报告有助于完善项目，兼容各种设备和系统版本；分析用户行为有助于做出更符合用户行为习惯、满足用户的Apps。</p>
+<p>（9）作为个人开发者，不要单单只是开发者，更要去理解市场。如果想吸引更多用户，就需要花费更多时间和金钱进行市场营销。</p>
+<p>（10）优化项目十分重要。尽可能做到写的代码运行快、占用内存少、消耗更少设备存储空间。同时推荐了一款内存检测工具<a href="https://github.com/square/leakcanary" target="_blank" rel="noopener">Leak Canary</a>。</p>
+<p>（11）可以尝试使用以下方法提升Gradle编译速度（作者gradle构建时间从4分钟降为30秒）：<a href="https://medium.com/@cesarmcferreira/speeding-up-gradle-builds-619c442113cb#.thj9h2pqd、http://zeroturnaround.com/rebellabs/making-gradle-builds-faster/。" target="_blank" rel="noopener">https://medium.com/@cesarmcferreira/speeding-up-gradle-builds-619c442113cb#.thj9h2pqd、http://zeroturnaround.com/rebellabs/making-gradle-builds-faster/。</a></p>
+<p>（12）完成某项需求后务必进行测试！</p>
+<p>（13）Android碎片化比较严重，各种设备、版本、规格和厂商都需要进行测试。</p>
+<p>（14）使用Git进行项目管理。</p>
+<p>（15）让App更难被破解。对一些敏感数据需要进行加密、混淆。阅读以下文章可以对提高应用安全性有所帮助：<a href="https://www.airpair.com/android/posts/adding-tampering-detection-to-your-android-app、https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/。" target="_blank" rel="noopener">https://www.airpair.com/android/posts/adding-tampering-detection-to-your-android-app、https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/。</a></p>
+<p>（16）使用低端设备进行开发。高性能设备可以掩盖调许多因代码问题导致的性能问题。</p>
+<p>（17）要在设计模式上下功夫,这会对你完成项目有着极大帮助。作者推荐了这个<a href="https://github.com/iluwatar/java-design-patterns" target="_blank" rel="noopener">GitHub项目</a>，其中包含了全部的设计模式。</p>
+<p>（18）呼吁大家对开源社区作出贡献。每周抽出一点时间完成这件事，使社区更加丰富。</p>
+<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><p><a href="https://www.cnblogs.com/FraserYu/p/12424765.html" target="_blank" rel="noopener">https://www.cnblogs.com/FraserYu/p/12424765.html</a></p>
+<p>了解volatile和synchronized的区别：两者都可保证内存可见性，但synchronized是排他锁，可以保证原子性，性能较差；volatile不是排它锁，不能保证原子性，性能较优。</p>
+<h2 id="Share-1"><a href="#Share-1" class="headerlink" title="Share"></a>Share</h2><p>这里分享一篇关于Android编码规范的文章：</p>
+<p><a href="https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md" target="_blank" rel="noopener">https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md</a></p>
 
       
 
@@ -289,7 +319,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/10/ARTS打卡第一周（2021.1.10）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/17/ARTS打卡第二周（2021.1.17）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +333,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/17/ARTS打卡第二周（2021.1.17）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/22/快速查看方法数工具——dex-method-counts/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ARTS打卡第二周（2021.1.17）
+          使用dex-method-counts来查看apk或dex文件的方法数
         
       </div>
     </a>
   
   
-    <a href="/2020/05/03/Android-通用监听器的封装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android 通用监听器的封装</div>
+    <a href="/2021/01/10/ARTS打卡第一周（2021.1.10）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ARTS打卡第一周（2021.1.10）</div>
       <i class="icon-circle-right"></i>
     </a>
   

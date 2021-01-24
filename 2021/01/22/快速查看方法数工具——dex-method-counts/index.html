@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ARTS打卡第一周（2021.1.10） | 陈泽浩的个人博客</title>
+  <title>使用dex-method-counts来查看apk或dex文件的方法数 | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是ARTS打卡计划？">
+  <meta name="description" content="GitHub工程：dex-method-counts 使用方法（这里只讲windows环境下）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARTS打卡第一周（2021.1.10）">
-<meta property="og:url" content="http://yoursite.com/2021/01/10/ARTS打卡第一周（2021.1.10）/index.html">
+<meta property="og:title" content="使用dex-method-counts来查看apk或dex文件的方法数">
+<meta property="og:url" content="http://yoursite.com/2021/01/22/快速查看方法数工具——dex-method-counts/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
-<meta property="og:description" content="什么是ARTS打卡计划？">
+<meta property="og:description" content="GitHub工程：dex-method-counts 使用方法（这里只讲windows环境下）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-01-24T09:00:41.813Z">
+<meta property="og:updated_time" content="2021-01-24T09:02:36.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ARTS打卡第一周（2021.1.10）">
-<meta name="twitter:description" content="什么是ARTS打卡计划？">
+<meta name="twitter:title" content="使用dex-method-counts来查看apk或dex文件的方法数">
+<meta name="twitter:description" content="GitHub工程：dex-method-counts 使用方法（这里只讲windows环境下）">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -154,62 +154,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ARTS打卡第一周（2021.1.10）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-快速查看方法数工具——dex-method-counts" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ARTS打卡第一周（2021.1.10）
+      使用dex-method-counts来查看apk或dex文件的方法数
     </h1>
   
 
 
         
-        <a href="/2021/01/10/ARTS打卡第一周（2021.1.10）/" class="archive-article-date">
-  	<time datetime="2021-01-10T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+        <a href="/2021/01/22/快速查看方法数工具——dex-method-counts/" class="archive-article-date">
+  	<time datetime="2021-01-22T04:50:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么是ARTS打卡计划？"><a href="#什么是ARTS打卡计划？" class="headerlink" title="什么是ARTS打卡计划？"></a>什么是ARTS打卡计划？</h2><a id="more"></a>
+        <p>GitHub工程：<a href="https://github.com/mihaip/dex-method-counts" target="_blank" rel="noopener">dex-method-counts</a></p>
+<h3 id="使用方法（这里只讲windows环境下）"><a href="#使用方法（这里只讲windows环境下）" class="headerlink" title="使用方法（这里只讲windows环境下）"></a>使用方法（这里只讲windows环境下）</h3><a id="more"></a>
 
-<h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3><blockquote>
-<p>每周至少做一个leetcode的算法题。主要是为了编程训练和学习。</p>
-</blockquote>
-<h3 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h3><blockquote>
-<p>阅读并点评至少一片英文技术文章。主要是为了学习英文，如果你英文不行，你基本上无缘技术高手。</p>
-</blockquote>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><blockquote>
-<p>学习至少一个技术技巧。主要是为了总结和归纳你在日常工作中所遇到的知识点。</p>
-</blockquote>
-<h3 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h3><blockquote>
-<p>分享一篇有观点和思考的技术文章。主要是为了建立你的影响力，能够输出价值观。</p>
-</blockquote>
-<h2 id="Algorithm-1"><a href="#Algorithm-1" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目描述<br>输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为 O(n).<br>输入：[1,-2,3,10,-4,7,2,-5]<br>返回值：18<br>说明：输入的数组为{1,-2,3,10,—4,7,2,一5}，和最大的子数组为{3,10,一4,7,2}，因此输出为该子数组的和 18。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int FindGreatestSumOfSubArray(int[] array) &#123;</span><br><span class="line">        int max = array[0];</span><br><span class="line">        int cur = max;</span><br><span class="line">        for(int i = 1; i &lt; array.length; i++)&#123;</span><br><span class="line">            if(cur &lt;= 0 &amp;&amp; array[i] &lt;= 0)&#123;</span><br><span class="line">                if(array[i] &gt; max)&#123;</span><br><span class="line">                    max = array[i];</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur &lt;=0 &amp;&amp; array[i] &gt; 0)&#123;</span><br><span class="line">                cur = array[i];</span><br><span class="line">                if(cur &gt; max)&#123;</span><br><span class="line">                    max = cur;</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur + array[i] &lt;= 0)&#123;</span><br><span class="line">                cur = array[i];</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if(cur + array[i] &gt; 0 )&#123;</span><br><span class="line">                cur += array[i];</span><br><span class="line">                if(cur &gt; max)&#123;</span><br><span class="line">                    max = cur;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(cur &gt; max)&#123;</span><br><span class="line">            max = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1、下载工程后解压文件</p>
+<p>2、配置gradle环境变量，可以使用cmd命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle -version</span><br></pre></td></tr></table></figure>
 
-<p>更优做法：动态规划</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">	public int FindGreatestSumOfSubArray(int[] array) &#123;</span><br><span class="line">		int max = array[0];</span><br><span class="line">         for(int i = 1; i &lt; array.length; i++)&#123;</span><br><span class="line">             array[i] += array[i-1] &gt; 0 ? array[i-1]: 0;</span><br><span class="line">             max = Math.max(max,array[i]);</span><br><span class="line">         &#125;</span><br><span class="line">         return max;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>检查是否配置成功</p>
+<p>3、进入工程根目录后，长按shift+右键可以看到多了一个“在此处打开命令窗口”的选项，点击它。（等同于使用cmd命令进入该路径）</p>
+<p>4、输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle jar</span><br></pre></td></tr></table></figure>
 
-<h2 id="Review-1"><a href="#Review-1" class="headerlink" title="Review"></a>Review</h2><p>阅读文章：<a href="https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2" target="_blank" rel="noopener">https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2</a></p>
-<p>该文章主要是讲述使用Android Studio的一些小技巧、插件以及一些优秀文章。</p>
-<p>下面是我认为对我帮助较大的几个使用Android Studio的快捷键：</p>
-<p>1、Windows下使用<strong>alt+j</strong>可以<strong>同时修改</strong>多出相同语句或单词。</p>
-<p>2、Windows下使用<strong>ctrl+alt+b</strong>点击接口名称可以<strong>快速定位</strong>到实现接口的实现类；反之，使用<strong>ctrl+b</strong>可以<strong>快速定位</strong>到<strong>类/方法/变量</strong>的<strong>声明</strong>。</p>
-<p>3、Windows下使用<strong>ctrl+shift+b</strong>可以快速定位到<strong>变量类型</strong>所在的类。</p>
-<p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee employee = new Employee(“Michal”);</span><br></pre></td></tr></table></figure>
+<p>过几秒钟会出现BUILD SUCCESSFUL，说明成功导出jar包，路径为工程根目录\build\jar\dex-method-counts.jar</p>
+<p>5、输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar xxx_jar xxx_apk</span><br></pre></td></tr></table></figure>
 
-<p>使用该快捷键点击employee变量名可以跳转到Employee的类。</p>
-<p>4、Windows下使用<strong>ctrl+u</strong>点击<strong>某个方法</strong>里的任意位置，都会跳转到该方法的<strong>父方法</strong>中。</p>
-<p>5、Windows下使用<strong>ctrl+F4</strong>可以快速<strong>关闭当前Tab</strong>。</p>
-<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><h3 id="1、学习runtime文件夹的作用与provided依赖"><a href="#1、学习runtime文件夹的作用与provided依赖" class="headerlink" title="1、学习runtime文件夹的作用与provided依赖"></a>1、学习runtime文件夹的作用与provided依赖</h3><p>作用：主要用于提供编译支持，最终打包时不会将其打入apk文件<br>区别：使用eclipse开发时，需要将相应jar包放入runtime文件夹；而后面使用Android Studio开发，只需要使用provided指令即可</p>
-<h3 id="2、gradle编译时报错-NDK-is-missing-a-“platforms”-directory"><a href="#2、gradle编译时报错-NDK-is-missing-a-“platforms”-directory" class="headerlink" title="2、gradle编译时报错 NDK is missing a “platforms” directory."></a>2、gradle编译时报错 NDK is missing a “platforms” directory.</h3><p>If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to D:\AndroidStudioSDK\ndk-bundle.<br>If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.<br>原因： 使用Android gradle插件2.3（com.android.tools.build:gradle:2.3.0）可能会出现该问题，Android Studio3.5没出现，Android Studio升到4.1后出现了该问题<br>解决方案：检查工程中是否存在该版本的gradle tools，若存在该版本，则需要进行替换</p>
-<h2 id="Share-1"><a href="#Share-1" class="headerlink" title="Share"></a>Share</h2><p>第一次接触<a href="http://medium.xn--com()-r47iu21fp63donza/" target="_blank" rel="noopener">http://Medium.com</a> 这个网站，发现里面有很多英文的技术文章可以学习，以后也会尽量坚持阅读（不过需要梯子）。</p>
+<p>注意：xxx_jar是指jar包所在绝对路径，xxx_apk是指apk或dex包所在绝对路径</p>
+<p>6、出现 Processing xxxx.apk 就说明没问题了。</p>
+<h3 id="更加便捷的方法"><a href="#更加便捷的方法" class="headerlink" title="更加便捷的方法"></a>更加便捷的方法</h3><p>若是需要经常用到，使用cmd的方法会较为麻烦，因此可以考虑编写脚本将其添加到注册表中：</p>
+<p>1、首先新建一个文件</p>
+<p>2、脚本代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">REGEDIT4</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\dex-method-counts]</span><br><span class="line">@=&quot;dex-method-counts&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\*\shell\dex-method-counts\command]</span><br><span class="line">@=&quot;cmd.exe /k java -jar C:\\Users\\Administrator\\Desktop\\dex-method-counts-master\\build\\jar\\dex-method-counts.jar %1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>注意：C:\Users\Administrator\Desktop\dex-method-counts-master\build\jar\dex-method-counts.jar为我自己电脑的jar包路径，需要自己修改，注意路径分隔符要使用<strong>双斜杆”\\“</strong>，否则会注册失败。</p>
+<p>3、将文件后缀改为.reg。</p>
+<p>4、双击文件进行注册。</p>
+<p>5、注册成功后右键点击apk包，出现dex-method-counts的选项，点击之后便可直接查询方法数。</p>
+<p>我这里提供了一个jar包以及上述所说的脚本文件（下载后需要自行修改路径），<a href="http://qnfkt85bx.hn-bkt.clouddn.com/dex-method-counts.zip?e=1611481707&attname=&token=wd4WHf8u8hLxJGbBw7zS70ylCFzhvO1ZUeY8RX9M:zl16m40vxg162sHOAHq0EIjkVuI=" target="_blank" rel="noopener">点击下载</a></p>
 
       
 
@@ -289,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/10/ARTS打卡第一周（2021.1.10）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/22/快速查看方法数工具——dex-method-counts/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +296,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/17/ARTS打卡第二周（2021.1.17）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/24/ARTS打卡第三周（2021.1.24）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ARTS打卡第二周（2021.1.17）
+          ARTS打卡第三周（2021.1.24）
         
       </div>
     </a>
   
   
-    <a href="/2020/05/03/Android-通用监听器的封装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Android 通用监听器的封装</div>
+    <a href="/2021/01/17/ARTS打卡第二周（2021.1.17）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ARTS打卡第二周（2021.1.17）</div>
       <i class="icon-circle-right"></i>
     </a>
   
