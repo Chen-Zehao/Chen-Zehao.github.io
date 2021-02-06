@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ARTS打卡第五周（2021.2.6）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/06/ARTS打卡第五周（2021.2.6）/">ARTS打卡第五周（2021.2.6）</a>
+    </h1>
+  
+
+
+        
+        <a href="/2021/02/06/ARTS打卡第五周（2021.2.6）/" class="archive-article-date">
+  	<time datetime="2021-02-06T13:43:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目描述</p>
+<p>输入两个链表，找出它们的第一个公共结点。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">public class ListNode &#123;</span><br><span class="line">    int val;</span><br><span class="line">    ListNode next = null;</span><br><span class="line"></span><br><span class="line">    ListNode(int val) &#123;</span><br><span class="line">        this.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;*/</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) &#123;</span><br><span class="line">         if(pHead1 == null || pHead2 == null)&#123;</span><br><span class="line">             return null;</span><br><span class="line">         &#125;</span><br><span class="line">        ListNode p1 = pHead1;</span><br><span class="line">        ListNode p2 = pHead2;</span><br><span class="line">        while(p1 != p2)&#123;</span><br><span class="line">            if(p1 == null)&#123;</span><br><span class="line">                p1 = pHead2;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                p1 = p1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            if(p2 == null)&#123;</span><br><span class="line">                p2 = pHead1;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                p2 = p2.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return p1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p><a href="https://medium.com/androiddevelopers/the-android-lifecycle-cheat-sheet-part-ii-multiple-activities-a411fd139f24" target="_blank" rel="noopener">The Android Lifecycle cheat sheet — part II: Multiple activities</a></p>
+<p>本文介绍了多个Activity在跳转、屏幕选择以及后台杀死应用的情况下的生命周期</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+
+<p>设备1（海外手机、Android 10系统）：</p>
+<p>若url为”<a href="https://twitter.com&quot;，应该会直接跳转到浏览器上的Twitter主页，但是实际上他会再从浏览器跳转到Twitter" target="_blank" rel="noopener">https://twitter.com&quot;，应该会直接跳转到浏览器上的Twitter主页，但是实际上他会再从浏览器跳转到Twitter</a> App，将域名改为facebook并没有出现这个情况，因此判断这个现象应该是手机对Twitter做了兼容</p>
+<p>并且发现，若url的是”<a href="https://twitter.app.link&quot;，会直接跳转Twitter客户端，正常情况下应该是需要使用自定义的Scheme才可以直接跳转到第三方App，但是https协议也可以跳转到Twitter应用就比较奇怪，后面有机会再研究一下是如何实现的。" target="_blank" rel="noopener">https://twitter.app.link&quot;，会直接跳转Twitter客户端，正常情况下应该是需要使用自定义的Scheme才可以直接跳转到第三方App，但是https协议也可以跳转到Twitter应用就比较奇怪，后面有机会再研究一下是如何实现的。</a></p>
+<p>设备2（大陆手机、Android 6系统）：</p>
+<p>不会出现跳转应用的情况，需使用setPackage()设置包名方可跳转到应用</p>
+<p>因此目前不清楚二者的区别是Android系统导致还是海外手机作了特殊处理 ，先记录一下，后面再进行考证。</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p>分享一篇Android开发规范的文章：<a href="https://mp.weixin.qq.com/s/BNFnLs1iRmlIG13to7JBiw" target="_blank" rel="noopener">Android 代码规范大全</a></p>
+<p>这篇文章介绍了一些工具规范、命名规范、注释规范等，比较适合新人阅读。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/06/ARTS打卡第五周（2021.2.6）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ARTS打卡第四周（2021.1.31）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -730,73 +810,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android中如何将jks签名文件转换为keystore文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/">Android中如何将jks签名文件转换为keystore文件</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/" class="archive-article-date">
-  	<time datetime="2020-01-14T01:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="转换步骤"><a href="#转换步骤" class="headerlink" title="转换步骤"></a>转换步骤</h2><h3 id="在Android-studio下的Terminal中输入命令行："><a href="#在Android-studio下的Terminal中输入命令行：" class="headerlink" title="在Android studio下的Terminal中输入命令行："></a>在Android studio下的Terminal中输入命令行：</h3><p>首先把jks文件转为p12信息文件 </p>
-<p>keytool -importkeystore -srckeystore ‪x:\xxx\xxx.jks（jks文件路径） -srcstoretype JKS -deststoretype PKCS12 -destkeystore x:\xxx\xxx.p12（后缀改为p12）</p>
-<p>然后把p12文件转为keystore文件</p>
-<p>keytool -v -importkeystore -srckeystore x:\xxx\xxx.p12（p12文件路径）  -srcstoretype PKCS12 -destkeystore x:\xxx\xxx.keystore（后缀改为p12） -deststoretype JKS</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/">展开全文 >></a>
         </p>
       
 
