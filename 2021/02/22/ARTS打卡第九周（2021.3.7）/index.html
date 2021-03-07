@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>陈泽浩的个人博客</title>
+  <title>ARTS打卡第九周（2021.3.7） | 陈泽浩的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="陈泽浩的个人博客">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="Algorithm题目描述 输入一个链表，输出该链表中倒数第k个结点。 输入 1&amp;#123;1,2,3,4,5&amp;#125;,1  返回值 1&amp;#123;5&amp;#125;  代码 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;/* * public class Li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS打卡第九周（2021.3.7）">
+<meta property="og:url" content="http://yoursite.com/2021/02/22/ARTS打卡第九周（2021.3.7）/index.html">
 <meta property="og:site_name" content="陈泽浩的个人博客">
+<meta property="og:description" content="Algorithm题目描述 输入一个链表，输出该链表中倒数第k个结点。 输入 1&amp;#123;1,2,3,4,5&amp;#125;,1  返回值 1&amp;#123;5&amp;#125;  代码 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;/* * public class Li">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-03-07T14:34:40.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈泽浩的个人博客">
+<meta name="twitter:title" content="ARTS打卡第九周（2021.3.7）">
+<meta name="twitter:description" content="Algorithm题目描述 输入一个链表，输出该链表中倒数第k个结点。 输入 1&amp;#123;1,2,3,4,5&amp;#125;,1  返回值 1&amp;#123;5&amp;#125;  代码 1234567891011121314151617181920212223242526272829303132333435363738394041import java.util.*;/* * public class Li">
   
     <link rel="alternative" href="/atom.xml" title="陈泽浩的个人博客" type="application/atom+xml">
   
@@ -150,33 +154,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Android-通用监听器的封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ARTS打卡第九周（2021.3.7）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/03/Android-通用监听器的封装/">Android 通用监听器的封装</a>
+    <h1 class="article-title" itemprop="name">
+      ARTS打卡第九周（2021.3.7）
     </h1>
   
 
 
         
-        <a href="/2020/05/03/Android-通用监听器的封装/" class="archive-article-date">
-  	<time datetime="2020-05-03T13:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
+        <a href="/2021/02/22/ARTS打卡第九周（2021.3.7）/" class="archive-article-date">
+  	<time datetime="2021-02-22T15:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。</p>
-        
+        <h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目描述</p>
+<p>输入一个链表，输出该链表中倒数第k个结点。</p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,2,3,4,5&#125;,1</span><br></pre></td></tr></table></figure>
+
+<p>返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;5&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *   int val;</span><br><span class="line"> *   ListNode next = null;</span><br><span class="line"> *   public ListNode(int val) &#123;</span><br><span class="line"> *     this.val = val;</span><br><span class="line"> *   &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="line">     *</span><br><span class="line">     * </span><br><span class="line">     * @param pHead ListNode类 </span><br><span class="line">     * @param k int整型 </span><br><span class="line">     * @return ListNode类</span><br><span class="line">     */</span><br><span class="line">    public ListNode FindKthToTail (ListNode pHead, int k) &#123;</span><br><span class="line">        if(pHead == null)&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        // write code here</span><br><span class="line">        ListNode p1 = pHead;</span><br><span class="line">        ListNode p2 = pHead;</span><br><span class="line">        for(int i = 0; i &lt; k; i++)&#123;</span><br><span class="line">            if(p1 == null)&#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">            p1 = p1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        while(p1 != null)&#123;</span><br><span class="line">            p1 = p1.next;</span><br><span class="line">            p2 = p2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        return p2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p><a href="https://medium.com/insider/i-tried-planking-for-5-minutes-every-day-for-a-month-heres-what-happened-4e5051b42b58" target="_blank" rel="noopener">https://medium.com/insider/i-tried-planking-for-5-minutes-every-day-for-a-month-heres-what-happened-4e5051b42b58</a></p>
+<p>这篇文章讲了作者自己挑战坚持一个月每天5分钟的平板支撑，以及自己每个阶段的经历，也用事实证明了有些事情并没有捷径，要想做得好就得努力去做，如果能持之以恒，哪怕没有做得特别完美，回过头也能发现自己从中也获得了巨大的收获。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>1、全屏的Dialog若使用默认主题，在Android7以上系统（是否该条件下出现还有待验证，只是大致猜测），通过setContentView设置的内容无法全屏，可以通过随便设置一个其他的主题来解决</p>
+<p>2、SDK开发过程中，若需要使用到某些主题，尽量不要直接使用，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Dialog(context, android.R.style.Theme_Light)</span><br></pre></td></tr></table></figure>
+
+<p>最好改为通过getResources().getIdentifier()方法去获取资源id，防止因为找不到资源而出现闪退问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.getResources().getIdentifier(id, type, pkgName)</span><br></pre></td></tr></table></figure>
+
+<p>3、根据时间戳校验两个时间是否为同一天的方法：</p>
+<p>方案一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(timestamp + 时区 * 3600) / (24 * 60 * 60)</span><br></pre></td></tr></table></figure>
+
+<p>该公式可以计算出时间戳对应的天数，两个时间戳由该公式可以计算出两个值，若相同即为同一天</p>
+<p>该方案需要先定好时区</p>
+<p>方案二：</p>
+<p>利用SimpleDateFormat将时间戳转换为具体日期，在判断是否为同一天</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="https://juejin.cn/post/6907620425837051917" target="_blank" rel="noopener">https://juejin.cn/post/6907620425837051917</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -185,16 +236,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/03/Android-通用监听器的封装/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/02/22/ARTS打卡第九周（2021.3.7）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/22/ARTS打卡第八周（2021.2.28）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ARTS打卡第八周（2021.2.28）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -214,591 +324,14 @@
 
 
 
-
-  
-    <article id="post-Android设置图片宽度固定，高度自适应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/Android设置图片宽度固定，高度自适应/">Android设置图片宽度固定，高度自适应</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/04/04/Android设置图片宽度固定，高度自适应/" class="archive-article-date">
-  	<time datetime="2020-04-04T07:58:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Android设置图片宽度固定，高度自适应</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/Android设置图片宽度固定，高度自适应/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android-AppBarLayout子viewGONE掉后吸顶失效问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/Android-AppBarLayout子viewGONE掉后吸顶失效问题/">Android AppBarLayout子viewGONE掉后吸顶失效问题</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/03/26/Android-AppBarLayout子viewGONE掉后吸顶失效问题/" class="archive-article-date">
-  	<time datetime="2020-03-26T14:15:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用CoordinatorLayout+AppBarLayout+TabLayout实现吸顶过程中，我的页面布局如下，当我把View1或View2在代码中GONE掉之后，会出现TabLayout吸顶失效的问题，后面发现是因为AppBarLayout在计算距离的时候没有考虑子View的可见性，因此就算把子ViewGONE掉之后，AppBarLayout可滑动的距离还是跟之前一样，而实际可见的区域变小了，因此会导致TabLayout的吸顶失效。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/Android-AppBarLayout子viewGONE掉后吸顶失效问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android中解决FragmentPagerAdapter刷新Fragment无效的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/">Android中解决FragmentPagerAdapter刷新Fragment无效的问题</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/" class="archive-article-date">
-  	<time datetime="2020-03-05T12:01:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在项目中，我采用的是ViewPager+FragmentPagerAdapter+Fragment的方式，要实现fragment的刷新，但是发现并没有把ViewPager中的fragment替换掉，因此上网查阅了很多博客，最后解决了这个问题。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/Android中解决FragmentPagerAdapter刷新Fragment无效的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android中如何将jks签名文件转换为keystore文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/">Android中如何将jks签名文件转换为keystore文件</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/" class="archive-article-date">
-  	<time datetime="2020-01-14T01:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="转换步骤"><a href="#转换步骤" class="headerlink" title="转换步骤"></a>转换步骤</h2><h3 id="在Android-studio下的Terminal中输入命令行："><a href="#在Android-studio下的Terminal中输入命令行：" class="headerlink" title="在Android studio下的Terminal中输入命令行："></a>在Android studio下的Terminal中输入命令行：</h3><p>首先把jks文件转为p12信息文件 </p>
-<p>keytool -importkeystore -srckeystore ‪x:\xxx\xxx.jks（jks文件路径） -srcstoretype JKS -deststoretype PKCS12 -destkeystore x:\xxx\xxx.p12（后缀改为p12）</p>
-<p>然后把p12文件转为keystore文件</p>
-<p>keytool -v -importkeystore -srckeystore x:\xxx\xxx.p12（p12文件路径）  -srcstoretype PKCS12 -destkeystore x:\xxx\xxx.keystore（后缀改为p12） -deststoretype JKS</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/14/Android中如何将jks签名文件转换为keystore文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android路由框架——Arouter学习与搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/Android路由框架——Arouter学习与搭建/">Android路由框架——Arouter学习与搭建</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/12/23/Android路由框架——Arouter学习与搭建/" class="archive-article-date">
-  	<time datetime="2019-12-23T03:39:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为项目需要使用到Android组件化开发，因此学习了一下Arouter框架的使用，在Arouter搭建的过程中也遇到了很多坑，也查阅了很多相关博客才解决，因此想记录一下，有兴趣的小伙伴可以看一下我<a href="https://github.com/Chen-Zehao/MyArouterTest" target="_blank" rel="noopener">Github上的Demo</a>。接下来是Arouter框架的搭建步骤</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/Android路由框架——Arouter学习与搭建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android TabLayout+ViewPager+Fragment使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/">Android TabLayout+ViewPager+Fragment使用</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/" class="archive-article-date">
-  	<time datetime="2019-11-07T15:56:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为想实现底部导航栏的效果，查了一下发现大部分人都是用TabLayout+ViewPager+Fragment实现的，但是有时官方的TabLayout可能没办法满足实际开发需求，所以在这里推荐一个第三方库——<strong>FlycoTabLayout</strong>，使用起来相当简单，在这里我参考了<a href="https://blog.csdn.net/analyzesystem/article/details/51426473" target="_blank" rel="noopener">https://blog.csdn.net/analyzesystem/article/details/51426473</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/07/Android TabLayout+ViewPager+Fragment使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在Recyclerview中使用Switch控件被复用的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/">在Recyclerview中使用Switch控件被复用的解决方法</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/" class="archive-article-date">
-  	<time datetime="2019-09-30T09:18:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Recyclerview中使用Switch控件时，遇到了一个以前没有遇过的问题————控件被复用，我点击了第一个开关，意外发现往后的每10个控件里面就有1个被打开了，网上很多方法试了都没用，于是改了一个上午才解决了这个问题。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/30/在Recyclerview中使用Switch控件被复用的解决方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-retrofit2-body提交String类型报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/15/retrofit2-body提交String类型报错/">retrofit2 @body提交String类型报错</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/09/15/retrofit2-body提交String类型报错/" class="archive-article-date">
-  	<time datetime="2019-09-15T12:10:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface SampleApi &#123; </span><br><span class="line">    @POST(&quot;sample-endpoint&quot;) </span><br><span class="line">    Call&lt;ApiResponse&gt; postThing(@Body String params)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/15/retrofit2-body提交String类型报错/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Recyclerview作为子布局时获取的高度不会根据item数量调整" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">Recyclerview作为子布局时获取的高度不会根据item数量调整</a>
-    </h1>
-  
-
-
-        
-        <a href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/" class="archive-article-date">
-  	<time datetime="2019-08-28T04:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Recyclerview作为子布局时，高度设置为wrap_content，如果禁止了Recyclerview的滚动，那么它的高度应当是其里面子项的高度之和，而将其嵌入到ScrollView中时，当子项高度之和大于ScrollView原本的高度时，则获取的高度则为ScrollView的高度，使Recyclerview显示不全。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/28/Recyclerview作为子布局时获取的高度不会根据item数量调整/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -822,8 +355,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

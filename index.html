@@ -152,6 +152,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ARTS打卡第九周（2021.3.7）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/22/ARTS打卡第九周（2021.3.7）/">ARTS打卡第九周（2021.3.7）</a>
+    </h1>
+  
+
+
+        
+        <a href="/2021/02/22/ARTS打卡第九周（2021.3.7）/" class="archive-article-date">
+  	<time datetime="2021-02-22T15:32:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目描述</p>
+<p>输入一个链表，输出该链表中倒数第k个结点。</p>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;1,2,3,4,5&#125;,1</span><br></pre></td></tr></table></figure>
+
+<p>返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;5&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *   int val;</span><br><span class="line"> *   ListNode next = null;</span><br><span class="line"> *   public ListNode(int val) &#123;</span><br><span class="line"> *     this.val = val;</span><br><span class="line"> *   &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class Solution &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="line">     *</span><br><span class="line">     * </span><br><span class="line">     * @param pHead ListNode类 </span><br><span class="line">     * @param k int整型 </span><br><span class="line">     * @return ListNode类</span><br><span class="line">     */</span><br><span class="line">    public ListNode FindKthToTail (ListNode pHead, int k) &#123;</span><br><span class="line">        if(pHead == null)&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        // write code here</span><br><span class="line">        ListNode p1 = pHead;</span><br><span class="line">        ListNode p2 = pHead;</span><br><span class="line">        for(int i = 0; i &lt; k; i++)&#123;</span><br><span class="line">            if(p1 == null)&#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">            p1 = p1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        while(p1 != null)&#123;</span><br><span class="line">            p1 = p1.next;</span><br><span class="line">            p2 = p2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        return p2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p><a href="https://medium.com/insider/i-tried-planking-for-5-minutes-every-day-for-a-month-heres-what-happened-4e5051b42b58" target="_blank" rel="noopener">https://medium.com/insider/i-tried-planking-for-5-minutes-every-day-for-a-month-heres-what-happened-4e5051b42b58</a></p>
+<p>这篇文章讲了作者自己挑战坚持一个月每天5分钟的平板支撑，以及自己每个阶段的经历，也用事实证明了有些事情并没有捷径，要想做得好就得努力去做，如果能持之以恒，哪怕没有做得特别完美，回过头也能发现自己从中也获得了巨大的收获。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>1、全屏的Dialog若使用默认主题，在Android7以上系统（是否该条件下出现还有待验证，只是大致猜测），通过setContentView设置的内容无法全屏，可以通过随便设置一个其他的主题来解决</p>
+<p>2、SDK开发过程中，若需要使用到某些主题，尽量不要直接使用，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Dialog(context, android.R.style.Theme_Light)</span><br></pre></td></tr></table></figure>
+
+<p>最好改为通过getResources().getIdentifier()方法去获取资源id，防止因为找不到资源而出现闪退问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.getResources().getIdentifier(id, type, pkgName)</span><br></pre></td></tr></table></figure>
+
+<p>3、根据时间戳校验两个时间是否为同一天的方法：</p>
+<p>方案一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(timestamp + 时区 * 3600) / (24 * 60 * 60)</span><br></pre></td></tr></table></figure>
+
+<p>该公式可以计算出时间戳对应的天数，两个时间戳由该公式可以计算出两个值，若相同即为同一天</p>
+<p>该方案需要先定好时区</p>
+<p>方案二：</p>
+<p>利用SimpleDateFormat将时间戳转换为具体日期，在判断是否为同一天</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="https://juejin.cn/post/6907620425837051917" target="_blank" rel="noopener">https://juejin.cn/post/6907620425837051917</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/22/ARTS打卡第九周（2021.3.7）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ARTS打卡第八周（2021.2.28）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -797,70 +889,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/01/10/ARTS打卡第一周（2021.1.10）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android-通用监听器的封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/03/Android-通用监听器的封装/">Android 通用监听器的封装</a>
-    </h1>
-  
-
-
-        
-        <a href="/2020/05/03/Android-通用监听器的封装/" class="archive-article-date">
-  	<time datetime="2020-05-03T13:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Android中，我们往往会在自定义dialog中进行一些点击事件的监听，而我们大多数是采用设置一个监听接口的方式，将点击事件回调给外部的Activity中进行处理。然而如果我们有多个Dialog，那么每个Dialog我们是不是都需要定义一个监听器接口来处理相关事件的监听，这样的话会导致监听接口后期的维护成本较高，因此封装一个足够通用的监听器是可以有效提高开发效率的。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/03/Android-通用监听器的封装/">展开全文 >></a>
         </p>
       
 
